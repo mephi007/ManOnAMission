@@ -27,6 +27,11 @@ public class Node {
 		
 		public int getData()
 		{
-			return this.data;
+			return data;
+		}
+		
+		public Node getNext()
+		{
+			return next;
 		}
 }
