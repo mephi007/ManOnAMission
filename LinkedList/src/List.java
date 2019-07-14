@@ -91,5 +91,64 @@ public class List {
 			size++; // incrementing the size
 		}
 	}
-
+	
+	//Deletion
+	
+	//Deletion at First
+	public void deleteAtFirst()
+	{
+		if(isEmpty())			//checking if the list is already empty or not
+		{
+			System.out.println("List is already empty");
+		}
+		else {
+			start = start.getNext();		//setting the ref of the second node to the start
+			size--;					//decrementing the size;
+		}
+	}
+	
+	//Deletion at end
+	public void deleteAtEnd()
+	{
+		if(size > 1)		//checking the size of the list
+		{
+			Node t = start;
+			for(int i=1; i<size-1;i++)
+			{
+				t = t.getNext();
+			}
+			t.setNext(null);
+			size--;
+		}
+		else if(size == 1)  //if the size is 1
+		{
+			start = null;
+			size--;
+		}
+		else
+		{
+			System.out.println("List is already empty");
+		}
+	}
+	
+	//Deletion at given position
+	public void deleteAtPos(int pos)
+	{
+		if (pos == 1) // inserting at beginning
+			deleteAtFirst();
+		else if (pos == size + 1) // inserting at the end
+			deleteAtEnd();
+		else if(pos>size || pos <1)
+		{
+			Node t = start;
+			for(int i =1; i<pos-1; i++)
+			{
+				t = t.getNext();
+			}
+			Node t1 = t.getNext();
+			t.setNext(t1.getNext());
+			size--;
+		}
+		else System.out.println("List is already empty");
+	}
 }
