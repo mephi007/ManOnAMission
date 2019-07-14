@@ -134,11 +134,15 @@ public class List {
 	//Deletion at given position
 	public void deleteAtPos(int pos)
 	{
-		if (pos == 1) // inserting at beginning
+		if(start==null)
+		{
+		System.out.println("List is already empty");
+		}
+		else if (pos == 1) // inserting at beginning
 			deleteAtFirst();
 		else if (pos == size + 1) // inserting at the end
 			deleteAtEnd();
-		else if(pos>size || pos <1)
+		else 
 		{
 			Node t = start;
 			for(int i =1; i<pos-1; i++)
@@ -149,6 +153,5 @@ public class List {
 			t.setNext(t1.getNext());
 			size--;
 		}
-		else System.out.println("List is already empty");
 	}
 }
