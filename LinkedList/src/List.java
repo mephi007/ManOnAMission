@@ -190,22 +190,29 @@ public class List {
 		}
 	}
 	
-	//Search
-	public boolean Search(int val)
-	{
+	// Search
+	public boolean Search(int val) {
 
-			Node t = start;
-			while(t.getNext() != null)
-			{
-				if(val == t.getData())
-				{
-					return true;
-				}
-
-					t = t.getNext();
+		Node t = start;
+		while (t.getNext() != null) {
+			if (val == t.getData()) {
+				return true;
 			}
-			return false;
 
+			t = t.getNext();
+		}
+		return false;
+	}
+	
+	//Get Nth data from the linked List
+	public int getNth(int pos)
+	{
+		Node t = start;
+		for(int i =1; i<pos; i++)
+		{
+			t = t.getNext();
+		}
+		return t.getData();
 	}
 	
 }

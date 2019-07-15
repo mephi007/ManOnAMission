@@ -27,6 +27,9 @@ public class ListDriver {
 			list.insertAtPos(55, 2);
 			list.viewList();
 			System.out.println("given value found " +list.Search(20));
+			System.out.println("----------------");
+			list.viewList();
+			System.out.println("Data at position 2 "+":"+list.getNth(2));
 
 	}
 
