@@ -12,14 +12,17 @@ public class ListDriver {
 			list.insertAtPos(20, 2);
 			list.insertAtPos(40, 2);
 			list.viewList();
+			System.out.println("size of list " + list.Size());
 			System.out.println("----------------");
 			list.deleteAtFirst();
 			list.deleteAtEnd();
 			list.deleteAtPos(2);
+			//list.insertAtLast(30);
 			list.viewList();
+			System.out.println("size of list " + list.Size());
 			System.out.println("---------------");
-			list.deleteList();
-			list.viewList();
+//			list.deleteList();
+//			list.viewList();
 
 	}
 

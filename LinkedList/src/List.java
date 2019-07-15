@@ -2,12 +2,12 @@ import java.util.LinkedList;
 
 public class List {
 
-	private int size;
+	//private int size;
 	private Node start;
 
 	// constructor
 	public List() {
-		this.size = 0;
+		//this.size = 0;
 		this.start = null;
 	}
 
@@ -20,9 +20,9 @@ public class List {
 	}
 
 	// to get the size of the list
-	public int listSize() {
-		return size;
-	}
+//	public int listSize() {
+//		return size;
+//	}
 
 	// to view all the elements of the list
 	public void viewList() {
@@ -30,7 +30,7 @@ public class List {
 			System.out.println("list is empty");
 		} else {
 			Node t = start;
-			for (int i = 1; i <= size; i++) {
+			for (int i = 1; i <= Size(); i++) {
 				System.out.println(t.getData() + " ");
 				t = t.getNext();
 			}
@@ -45,7 +45,7 @@ public class List {
 		n.setData(val); // inserting the new value in the node object
 		n.setNext(start); // setting the next of new node object as start
 		start = n; // setting the start as the ref of the new node object
-		size++; // incrementing the size
+		//size++; // incrementing the size
 
 	}
 
@@ -66,7 +66,7 @@ public class List {
 				t = t.getNext(); // storing the ref of the last node
 			}
 			t.setNext(n); // storing the next of the last node
-			size++; // incrementing the list
+			//size++; // incrementing the list
 		}
 	}
 
@@ -74,9 +74,9 @@ public class List {
 	public void insertAtPos(int val, int pos) {
 		if (pos == 1) // inserting at beginning
 			insertAtFirst(val);
-		else if (pos == size + 1) // inserting at the end
+		else if (pos == Size() + 1) // inserting at the end
 			insertAtLast(val);
-		else if (pos > 0 && pos <= size) // given postiton is between beginning and the last
+		else if (pos > 0 && pos <= Size()) // given postiton is between beginning and the last
 		{
 			Node n, t;
 			n = new Node(); // new node object created
@@ -88,7 +88,7 @@ public class List {
 			}
 			n.setNext(t.getNext()); // setting the ref of the position into the new node object
 			t.setNext(n); // setting the ref of
-			size++; // incrementing the size
+			//size++; // incrementing the size
 		}
 	}
 	
@@ -103,27 +103,27 @@ public class List {
 		}
 		else {
 			start = start.getNext();		//setting the ref of the second node to the start
-			size--;					//decrementing the size;
+			//size--;					//decrementing the size;
 		}
 	}
 	
 	//Deletion at end
 	public void deleteAtEnd()
 	{
-		if(size > 1)		//checking the size of the list
+		if(Size() > 1)		//checking the size of the list
 		{
 			Node t = start;
-			for(int i=1; i<size-1;i++)
+			for(int i=1; i<Size()-1;i++)
 			{
 				t = t.getNext();
 			}
 			t.setNext(null);
-			size--;
+			//size--;
 		}
-		else if(size == 1)  //if the size is 1
+		else if(Size() == 1)  //if the size is 1
 		{
 			start = null;
-			size--;
+			//size--;
 		}
 		else
 		{
@@ -140,7 +140,7 @@ public class List {
 		}
 		else if (pos == 1) // inserting at beginning
 			deleteAtFirst();
-		else if (pos == size + 1) // inserting at the end
+		else if (pos == Size() + 1) // inserting at the end
 			deleteAtEnd();
 		else 
 		{
@@ -151,7 +151,7 @@ public class List {
 			}
 			Node t1 = t.getNext();
 			t.setNext(t1.getNext());
-			size--;
+			//size--;
 		}
 	}
 	
@@ -165,6 +165,26 @@ public class List {
 		{
 			start = null;
 			System.out.println("list has been deleted");
+		}
+	}
+	
+	public int Size()
+	{
+		int s = 1;
+		if(start == null )
+		{
+			return 0;
+		}
+		else
+		{
+			Node t;
+			t = start;
+			while(t.getNext() != null)
+			{
+				t = t.getNext();
+				s++;
+			}
+			return s;
 		}
 	}
 }
