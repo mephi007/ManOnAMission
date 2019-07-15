@@ -23,6 +23,10 @@ public class ListDriver {
 			System.out.println("---------------");
 //			list.deleteList();
 //			list.viewList();
+			list.insertAtLast(30);
+			list.insertAtPos(55, 2);
+			list.viewList();
+			System.out.println("given value found " +list.Search(20));
 
 	}
 

@@ -155,6 +155,7 @@ public class List {
 		}
 	}
 	
+	//delete whole linked list
 	public void deleteList()
 	{
 		if(start == null)
@@ -168,6 +169,7 @@ public class List {
 		}
 	}
 	
+	//count size of the linked list
 	public int Size()
 	{
 		int s = 1;
@@ -187,4 +189,23 @@ public class List {
 			return s;
 		}
 	}
+	
+	//Search
+	public boolean Search(int val)
+	{
+
+			Node t = start;
+			while(t.getNext() != null)
+			{
+				if(val == t.getData())
+				{
+					return true;
+				}
+
+					t = t.getNext();
+			}
+			return false;
+
+	}
+	
 }
