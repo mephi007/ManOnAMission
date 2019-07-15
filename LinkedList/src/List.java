@@ -136,7 +136,7 @@ public class List {
 	{
 		if(start==null)
 		{
-		System.out.println("List is already empty");
+			System.out.println("List is already empty");
 		}
 		else if (pos == 1) // inserting at beginning
 			deleteAtFirst();
@@ -152,6 +152,19 @@ public class List {
 			Node t1 = t.getNext();
 			t.setNext(t1.getNext());
 			size--;
+		}
+	}
+	
+	public void deleteList()
+	{
+		if(start == null)
+		{
+			System.out.println("list is already empty");
+		}
+		else
+		{
+			start = null;
+			System.out.println("list has been deleted");
 		}
 	}
 }
