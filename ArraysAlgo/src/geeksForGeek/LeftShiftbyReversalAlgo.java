@@ -1,7 +1,7 @@
 package geeksForGeek;
 
-public class RightShiftReversalAlgo {
-	
+public class LeftShiftbyReversalAlgo {
+
 	public static void ReversalAlgo(int[] a, int start, int end)
 	{
 		int s =start, e= end-1;
@@ -28,11 +28,11 @@ public class RightShiftReversalAlgo {
 		System.out.println("-------------");
 		
 		//right shift
-		//step1 take 1st part as start=0 to end=n-d and reverse 
-		ReversalAlgo(a, 0, n-d);
+		//step1 take 1st part as start=0 to end=d and reverse 
+		ReversalAlgo(a, 0, d);
 		
-		//step2 take 2nd part as start=n-d to end = n and reverse
-		ReversalAlgo(a, n-d, n);
+		//step2 take 2nd part as start=0+d+1 to end = n and reverse
+		ReversalAlgo(a, d+1, n);
 		
 		//step3 reverse whole array
 		ReversalAlgo(a, 0, n);
