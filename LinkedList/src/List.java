@@ -204,13 +204,25 @@ public class List {
 		return false;
 	}
 	
-	//Get Nth data from the linked List
+	//Get Nth data in the linked List
 	public int getNth(int pos)
 	{
 		Node t = start;
 		for(int i =1; i<pos; i++)
 		{
 			t = t.getNext();
+		}
+		return t.getData();
+	}
+	
+	//Nth data from the end in the linked list
+	public int getNthfromLast(int pos)
+	{
+		pos = Size() - pos;
+		Node t = start;
+		for(int i=1; i<=pos; i++)
+		{
+			t= t.getNext();
 		}
 		return t.getData();
 	}

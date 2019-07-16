@@ -25,11 +25,13 @@ public class ListDriver {
 //			list.viewList();
 			list.insertAtLast(30);
 			list.insertAtPos(55, 2);
+			list.insertAtFirst(5);
 			list.viewList();
 			System.out.println("given value found " +list.Search(20));
 			System.out.println("----------------");
 			list.viewList();
 			System.out.println("Data at position 2 "+":"+list.getNth(2));
+			System.out.println("Data at position 3 from the last is "+":"+list.getNthfromLast(3));
 
 	}
 
