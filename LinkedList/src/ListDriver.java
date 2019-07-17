@@ -32,6 +32,10 @@ public class ListDriver {
 			list.viewList();
 			System.out.println("Data at position 2 "+":"+list.getNth(2));
 			System.out.println("Data at position 3 from the last is "+":"+list.getNthfromLast(3));
+			list.insertAtPos(35, 2);
+			System.out.println("-----------------------");
+			list.viewList();
+			System.out.println("the middle data is "+list.getMiddleNode().getData());
 
 	}
 

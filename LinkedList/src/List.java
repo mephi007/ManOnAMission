@@ -227,4 +227,16 @@ public class List {
 		return t.getData();
 	}
 	
+	public Node getMiddleNode()
+	{
+		Node slow, fast;
+		slow = fast = start;
+		while(fast.getNext() != null)
+		{
+			fast = fast.getNext().getNext();
+			slow = slow.getNext();
+		}
+		return slow;
+	}
+	
 }
