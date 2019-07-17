@@ -298,6 +298,21 @@ public class List {
 		}
 	}
 	
+	//to detect loop, Floyd's Cycle-Finding Algorithm
+	public boolean FlCycFinding()
+	{
+		Node slow, fast;
+		slow = fast = start;
+		while(fast.getNext() != null)
+		{
+			fast = fast.getNext().getNext();
+			slow = slow.getNext();
+			if(slow.getNext() == fast.getNext())
+				return true;
+		}
+		return false;
+	}
+	
 	
 	
 }
