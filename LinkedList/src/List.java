@@ -275,4 +275,29 @@ public class List {
 		return false;
 	}
 	
+	//create loop in a linked list
+	public void createLoop(int pos)
+	{
+		if(pos > Size())
+		{
+			System.out.println("List is smaller than position");
+		}
+		else {
+			Node tPos = start;
+			for(int i =1; i<pos-1; i++)
+			{
+				tPos = tPos.getNext();
+			}
+			Node tLast = tPos.getNext();
+			while(tLast.getNext() != null)
+			{
+				tLast = tLast.getNext();
+			}
+			
+			tLast.setNext(tPos.getNext());
+		}
+	}
+	
+	
+	
 }

@@ -44,6 +44,7 @@ public class ListDriver {
 			System.out.println("--------------------");
 			System.out.println("40 has occured for :"+list.countOccur(40));
 			System.out.println("---------------------------");
+			list.createLoop(5);
 			System.out.println("Does the linked list have loop "+ list.detectLoop());
 			
 			
