@@ -1,3 +1,4 @@
+import java.util.HashSet;
 import java.util.LinkedList;
 
 public class List {
@@ -255,6 +256,23 @@ public class List {
 		}
 		
 		return count;
+	}
+	
+	//to detect if looping there in linked list or not
+	public boolean detectLoop()
+	{
+		HashSet<Node> s = new HashSet<>();
+		Node t = start;
+		while(t.getNext() != null)
+		{
+			if(s.contains(t.getNext()))
+			{
+				return true;
+			}
+			s.add(t.getNext());
+			t = t.getNext();
+		}
+		return false;
 	}
 	
 }
