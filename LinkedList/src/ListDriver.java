@@ -36,6 +36,15 @@ public class ListDriver {
 			System.out.println("-----------------------");
 			list.viewList();
 			System.out.println("the middle data is "+list.getMiddleNode().getData());
+			System.out.println("-----------------");
+			list.insertAtLast(40);
+			list.insertAtPos(40, 4);
+			list.insertAtPos(40, 2);
+			list.viewList();
+			System.out.println("--------------------");
+			System.out.println("40 has occured for :"+list.countOccur(40));
+			
+			
 
 	}
 

@@ -227,6 +227,7 @@ public class List {
 		return t.getData();
 	}
 	
+	//to get the middleNode
 	public Node getMiddleNode()
 	{
 		Node slow, fast;
@@ -237,6 +238,23 @@ public class List {
 			slow = slow.getNext();
 		}
 		return slow;
+	}
+	
+	//to count occurence of the given value
+	public int countOccur(int val)
+	{
+		Node t = start;
+		int count=0;
+		while(t != null)
+		{
+			if(t.getData() == val)
+			{
+				count++;
+			}
+			t=t.getNext();
+		}
+		
+		return count;
 	}
 	
 }
