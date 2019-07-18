@@ -64,9 +64,23 @@ public class ListDriver {
 			list.insertAtLast(60);
 			list.viewList();
 			System.out.println("---------------deleting the duplicates-----------------");
-			list.deleteduplicates();
+			list.deleteduplicatesSorted();
 			list.viewList();
-			
+			System.out.println("-----------------------------------------");
+			list.deleteList();
+			list.insertAtFirst(12);
+			list.insertAtPos(11, 2);
+			list.insertAtPos(12, 3);
+			list.insertAtPos(21, 4);
+			list.insertAtPos(41, 5);
+			list.insertAtPos(43, 6);
+			list.insertAtLast(21);
+			list.insertAtLast(21);
+			list.insertAtPos(12, 3);
+			list.viewList();
+			list.deleteduplicatesUnSorted();
+			System.out.println("----------------------------------");
+			list.viewList();
 			
 			
 

@@ -344,8 +344,8 @@ public class List {
 		return false;
 	}
 	
-	//delete the duplicates
-	public void deleteduplicates()
+	//delete the duplicates in a sorted linked list
+	public void deleteduplicatesSorted()
 	{
 		Node curr, nxt;
 		curr =start;
@@ -363,6 +363,29 @@ public class List {
 				curr = curr.getNext();
 				nxt = nxt.getNext();
 			}
+		}
+	}
+	
+	//delete the duplicates in a unsorted linked list
+	public void deleteduplicatesUnSorted()
+	{
+		HashSet<Integer> s = new HashSet<>();
+		Node t ,pt;
+		t = start;
+		pt = null;
+		while(t != null)
+		{
+			if(s.contains(t.getData()))
+			{
+				pt.setNext(t.getNext());
+				t = pt;
+			}
+			else {
+				s.add(t.getData());
+				pt =t;
+				
+			}
+			t = t.getNext();
 		}
 	}
 	
