@@ -49,8 +49,9 @@ public class ListDriver {
 			System.out.println("Does the linked list have loop using Floyd's Cycle-Finding Algo "+ list.detectLoop());
 			list.createLoop(5);
 			System.out.println("Does the linked list have loop "+ list.detectLoop());
-			System.out.println("Does the linked list have loop using Floyd's Cycle-Finding Algo "+ list.detectLoop());
+			System.out.println("Does the linked list have loop using Floyd's Cycle-Finding Algo "+ list.FlCycFinding());
 			System.out.println("-------------------------------------------------------------------------");
+			System.out.print(list.detectandcountLoop());
 			
 			
 

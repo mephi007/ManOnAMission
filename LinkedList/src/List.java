@@ -307,12 +307,40 @@ public class List {
 		{
 			fast = fast.getNext().getNext();
 			slow = slow.getNext();
-			if(slow.getNext() == fast.getNext())
+			if(slow == fast)
+			{
+				//detectandcountLoop(slow.getNext());
 				return true;
+			}
+				
 		}
 		return false;
 	}
 	
-	
+	public boolean detectandcountLoop()
+	{
+		
+		Node slow, fast;
+		slow = fast = start;
+		while(fast.getNext() != null)
+		{
+			fast = fast.getNext().getNext();
+			slow = slow.getNext();
+			if(slow == fast)
+			{
+				int count =1;
+				Node temp = slow;
+				while(temp.getNext() != slow)
+				{
+					count++;
+					temp = temp.getNext();
+				}
+				System.out.println(count);
+				return true;
+			}
+				
+		}
+		return false;
+	}
 	
 }
