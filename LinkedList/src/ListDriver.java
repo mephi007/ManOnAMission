@@ -51,7 +51,22 @@ public class ListDriver {
 			System.out.println("Does the linked list have loop "+ list.detectLoop());
 			System.out.println("Does the linked list have loop using Floyd's Cycle-Finding Algo "+ list.FlCycFinding());
 			System.out.println("-------------------------------------------------------------------------");
-			System.out.print(list.detectandcountLoop());
+			System.out.println("count of element in the loop");
+			System.out.println(list.detectandcountLoop());
+			System.out.println("---------------------------------------------------------------");
+			list.deleteList();
+			list.insertAtFirst(11);
+			list.insertAtPos(11, 2);
+			list.insertAtPos(11, 3);
+			list.insertAtPos(21, 4);
+			list.insertAtPos(43, 5);
+			list.insertAtPos(43, 6);
+			list.insertAtLast(60);
+			list.viewList();
+			System.out.println("---------------deleting the duplicates-----------------");
+			list.deleteduplicates();
+			list.viewList();
+			
 			
 			
 

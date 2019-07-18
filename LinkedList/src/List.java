@@ -317,6 +317,7 @@ public class List {
 		return false;
 	}
 	
+	//count elements in the loop
 	public boolean detectandcountLoop()
 	{
 		
@@ -341,6 +342,28 @@ public class List {
 				
 		}
 		return false;
+	}
+	
+	//delete the duplicates
+	public void deleteduplicates()
+	{
+		Node curr, nxt;
+		curr =start;
+		nxt = start.getNext();
+		while(nxt != null)
+		{
+			
+			if(curr.getData() == nxt.getData())
+			{
+				Node temp = nxt.getNext();
+				nxt = nxt.getNext();
+				curr.setNext(temp);
+			}
+			else {
+				curr = curr.getNext();
+				nxt = nxt.getNext();
+			}
+		}
 	}
 	
 }
