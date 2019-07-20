@@ -433,4 +433,19 @@ public class List {
 		}
 	}
 	
+	//Move last element to Front
+	public void moveLastToFront()
+	{
+		Node t = start;
+		Node prev = null;
+		while(t.getNext() != null)
+		{
+			prev = t;
+			t = t.getNext();
+		}
+		prev.setNext(null);
+		t.setNext(start);
+		start = t;
+	}
+	
 }

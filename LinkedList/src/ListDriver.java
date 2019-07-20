@@ -93,6 +93,9 @@ public class ListDriver {
 			list.SwapNode(12, 20);
 			System.out.println("Swap");
 			list.viewList();
+			System.out.println("-----------Move last element to Front-------------");
+			list.moveLastToFront();
+			list.viewList();
 			
 			
 			
