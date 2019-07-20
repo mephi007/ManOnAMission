@@ -486,7 +486,7 @@ public class List {
 	}
 	
 	
-	
+	//Intersection of two list;
 	public void IntersectList(List list1,List list2)
 	{
 		Node p = list1.start;
@@ -508,5 +508,36 @@ public class List {
 			else q = q.getNext();
 		}
 	}
+	
+	
+	//Intersecting point of two list
+	public int InterSectingPoint(List list1, List list2)
+	{
+		Node p = list1.start;
+		Node q = list2.start;
+		int d =0;
+		if(list1.Size() > list2.Size())
+		{
+			d = list1.Size() - list2.Size();
+		}
+		else d = list2.Size() - list2.Size();
+		
+		for(int i=1; i<=d; i++)
+		{
+			p = p.getNext();
+		}
+		
+		while(p.getNext() != null)
+		{
+			if(p.getData() == q.getData())
+			{
+				return p.getData();
+			}
+			p = p.getNext();
+			q = q.getNext();
+		}
+		return -1;
+	}
+	
 	
 }

@@ -128,9 +128,26 @@ public class ListDriver {
 			List list3 = new List();
 			list3.IntersectList(list1, list2);
 			list3.viewList();
-			
-		
-			
+			System.out.println("-----------------------------------");
+			list1.deleteList();
+			list2.deleteList();
+			System.out.println("-------------list 1--------------------");
+			list1.insertAtPos(3, 1);
+			list1.insertAtPos(6, 2);
+			list1.insertAtPos(9, 3);
+			list1.insertAtPos(15,4);
+			list1.insertAtPos(30, 5);
+			list1.viewList();
+			System.out.println("-------------list 2--------------------");
+			list2.insertAtPos(10, 1);
+			list2.insertAtPos(15, 2);
+			list2.insertAtPos(30, 3);
+			list2.viewList();
+			System.out.println("-----Intersecting point of two list---------");
+			int x = list1.InterSectingPoint(list1, list2);
+			if(x == -1)
+				System.out.println("no intersecting point");
+			else System.out.println(x);
 			
 			
 			
