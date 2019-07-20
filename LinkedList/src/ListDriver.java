@@ -108,6 +108,28 @@ public class ListDriver {
 			System.out.println("----------------------");
 			list.pairWiseSwap();
 			list.viewList();
+			System.out.println("-----------------------------------");
+			List list1 = new List();
+			list1.insertAtFirst(1);
+			list1.insertAtPos(2, 2);
+			list1.insertAtPos(3, 3);
+			list1.insertAtPos(4, 4);
+			list1.insertAtLast(6);	
+			System.out.println("-----List 1-----------------");
+			list1.viewList();
+			List list2 = new List();
+			list2.insertAtFirst(2);
+			list2.insertAtPos(4, 2);
+			list2.insertAtPos(6, 3);
+			list2.insertAtLast(8);
+			System.out.println("-----List 2-----------------");
+			list2.viewList();
+			System.out.println("-------------Intersection of List1 and List2");
+			List list3 = new List();
+			list3.IntersectList(list1, list2);
+			list3.viewList();
+			
+		
 			
 			
 			

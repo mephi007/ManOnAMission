@@ -37,6 +37,19 @@ public class List {
 			}
 		}
 	}
+	
+	public void viewList(List list) {
+		if (isEmpty()) {
+			System.out.println("list is empty");
+		} else {
+			Node t = start;
+			for (int i = 1; i <= Size(); i++) {
+				System.out.println(t.getData() + " ");
+				t = t.getNext();
+			}
+		}
+	}
+	
 
 	// Insertions
 
@@ -470,6 +483,30 @@ public class List {
 		}
 		start = new_start;
 		
+	}
+	
+	
+	
+	public void IntersectList(List list1,List list2)
+	{
+		Node p = list1.start;
+		Node q = list2.start;
+		int count =1;
+		while(p != null && q != null)
+		{
+			if(p.getData() == q.getData())
+			{
+				insertAtPos(p.getData(), count);
+				count++;
+				p = p.getNext();
+				q = q.getNext();
+			}
+			else if(p.getData() < q.getData())
+			{
+				p = p.getNext();
+			}
+			else q = q.getNext();
+		}
 	}
 	
 }
