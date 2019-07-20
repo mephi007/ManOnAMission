@@ -81,6 +81,20 @@ public class ListDriver {
 			list.deleteduplicatesUnSorted();
 			System.out.println("----------------------------------");
 			list.viewList();
+			System.out.println("-----------------------------------------------");
+			list.deleteList();
+			list.insertAtFirst(10);
+			list.insertAtPos(15, 2);
+			list.insertAtPos(12, 3);
+			list.insertAtPos(13, 4);
+			list.insertAtPos(20, 5);
+			list.insertAtLast(14);
+			list.viewList();
+			list.SwapNode(12, 20);
+			System.out.println("Swap");
+			list.viewList();
+			
+			
 			
 			
 

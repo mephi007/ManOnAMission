@@ -389,4 +389,48 @@ public class List {
 		}
 	}
 	
+	//swap Node
+	public void SwapNode(int x, int y)
+	{
+		Node p = start;
+		Node prev = null;
+		while(p!=null && p.getData() != x)
+		{
+			prev = p;
+			p=p.getNext();
+		}
+		Node px = p;
+		Node prevX = prev;
+		 
+		p = start;
+		prev = null;
+		
+		while(p != null && p.getData() != y)
+		{
+			prev = p;
+			p = p.getNext();
+		}
+		Node py = p;
+		Node prevY = prev;
+		
+		Node temp = py.getNext();
+		py.setNext(px.getNext());
+		px.setNext(temp);
+		if(prevX == null)
+		{
+			start = py;
+			prevY.setNext(px);
+		}
+		if(prevY == null)
+		{
+			px = start;
+			prevX.setNext(prevY);
+		}
+		if(prevX != null && prevY != null)
+		{
+			prevX.setNext(py);
+			prevY.setNext(px);
+		}
+	}
+	
 }
