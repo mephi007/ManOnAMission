@@ -96,6 +96,18 @@ public class ListDriver {
 			System.out.println("-----------Move last element to Front-------------");
 			list.moveLastToFront();
 			list.viewList();
+			System.out.println("--------PairWise Swap-------------------------");
+			list.deleteList();
+			list.insertAtFirst(1);
+			list.insertAtPos(2, 2);
+			list.insertAtPos(3, 3);
+			list.insertAtPos(4, 4);
+			list.insertAtPos(5, 5);
+			list.insertAtLast(6);
+			list.viewList();
+			System.out.println("----------------------");
+			list.pairWiseSwap();
+			list.viewList();
 			
 			
 			

@@ -448,4 +448,28 @@ public class List {
 		start = t;
 	}
 	
+	//pairiwse sawp
+	public void pairWiseSwap()
+	{	
+		Node q,temp;
+		Node p = start;
+		Node new_start = start.getNext();
+		while(true)
+		{
+			q = p.getNext();
+			temp = q.getNext();
+			q.setNext(p);
+			if(temp == null || temp.getNext() == null)
+			{
+				p.setNext(null);
+				break;
+			}
+			p.setNext(temp.getNext());
+			p =temp;
+			
+		}
+		start = new_start;
+		
+	}
+	
 }
