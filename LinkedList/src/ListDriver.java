@@ -148,7 +148,16 @@ public class ListDriver {
 			if(x == -1)
 				System.out.println("no intersecting point");
 			else System.out.println(x);
-			
+			System.out.println("---------Reverse List-----------");
+			list.deleteList();
+			list.insertAtPos(1, 1);
+			list.insertAtPos(2, 2);
+			list.insertAtPos(3, 3);
+			list.insertAtPos(4, 4);
+			list.viewList();
+			list.reverseRec();
+			System.out.println("------reversed List---------");
+			list.viewList();
 			
 			
 

@@ -539,5 +539,22 @@ public class List {
 		return -1;
 	}
 	
+	//Reserve the linked list
+	public void reverseRec()
+	{
+		Node prev, next, curr;
+		prev = next = null;
+		curr = start;
+		while( curr != null)
+		{
+			next = curr.getNext();
+			curr.setNext(prev);
+			prev = curr;
+			curr = next;
+		}
+		start = prev;
+		
+	}
+	
 	
 }
