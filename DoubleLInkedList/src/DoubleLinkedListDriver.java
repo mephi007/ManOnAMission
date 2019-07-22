@@ -7,6 +7,8 @@ public class DoubleLinkedListDriver {
 		
 		dlist.isEmpty();
 		System.out.println(dlist.Size());
+//		dlist.insertAtFirst(1);
+		dlist.viewList();
 
 	}
 
