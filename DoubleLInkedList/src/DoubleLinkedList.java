@@ -94,5 +94,36 @@ public class DoubleLinkedList {
 		}
 			
 	}
+	
+	//method to insert node at after the given position
+	public void insertAtposAfter(int data, int pos)
+	{
+		if(Size() == 0)
+		{
+			System.out.println("list is already empty, inserting at first");
+			insertAtFirst(data);
+		}
+		else if(pos > Size())
+		{
+			System.out.println("given postion is greater than the size");
+		}
+		else if(pos == Size())
+		{
+			insertAtLast(data);
+		}
+		else {
+			Node n,t;
+			n = new Node();
+			n.setData(data);
+			t = start;
+			for(int i=1; i< pos; i++)
+			{
+				t = t.getNext();
+			}
+			n.setNext(t.getNext());
+			n.setPrev(t);
+			t.setNext(n);
+		}
+	}
 
 }

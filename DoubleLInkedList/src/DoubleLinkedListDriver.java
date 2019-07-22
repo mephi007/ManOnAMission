@@ -12,6 +12,10 @@ public class DoubleLinkedListDriver {
 		dlist.viewList();
 		System.out.println("--------inserting at last---------------");
 		dlist.insertAtLast(2);
+		dlist.insertAtLast(3);
+		dlist.viewList();
+		System.out.println("-----inserting after 2nd postion");
+		dlist.insertAtposAfter(4, 2);
 		dlist.viewList();
 		
 
