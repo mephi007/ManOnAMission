@@ -165,5 +165,41 @@ public class DoubleLinkedList {
 			t.setNext(null);
 		}
 	}
+	
+	//method to delete node at given position
+	public void deleteAtPos(int pos)
+	{
+		if(Size() == 0)
+		{
+			System.out.println("list is already empty");
+		}
+		else if(pos < 1)
+		{
+			System.out.println("invalid position");
+		}
+		else if(Size() == 1)
+		{
+			start = null;
+		}
+		else if(pos == Size())
+		{
+			deleteAtLast();
+		}
+		else if(pos == 1)
+		{
+			deleteAtFirst();
+		}
+		else
+		{
+			Node t = start;
+			for(int i=1; i< pos-1; i++)
+			{
+				t = t.getNext();
+			}
+			Node beyond = t.getNext().getNext();
+			t.setNext(beyond);
+			beyond.setPrev(t);
+		}
+	}
 
 }

@@ -26,6 +26,9 @@ public class DoubleLinkedListDriver {
 		System.out.println("------deleting at last--------------");
 		dlist.deleteAtLast();
 		dlist.viewList();
+		System.out.println("---------------deleting at pos------------");
+		dlist.deleteAtPos(2);
+		dlist.viewList();
 		
 
 	}
