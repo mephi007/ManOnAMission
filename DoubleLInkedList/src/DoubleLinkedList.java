@@ -144,5 +144,26 @@ public class DoubleLinkedList {
 			start = t;
 		}
 	}
+	
+	//method to delete node at last
+	public void deleteAtLast()
+	{
+		if(Size() == 0)
+		{
+			System.out.println("list is already empty");
+		}
+		else if(Size() == 1)
+		{
+			start = null;
+		}
+		else {
+			Node t = start;
+			for(int i=1; i< Size()-1; i++)
+			{
+				t = t.getNext();
+			}
+			t.setNext(null);
+		}
+	}
 
 }
