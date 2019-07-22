@@ -127,5 +127,22 @@ public class DoubleLinkedList {
 			t.setNext(n);
 		}
 	}
+	
+	//method to delete node at first
+	public void deleteAtFirst()
+	{
+		if(Size() == 0)
+		{
+			System.out.println("list is already empty");
+		}
+		else if(Size() == 1)
+		{
+			start = null;
+		}
+		else {
+			Node t = start.getNext();
+			start = t;
+		}
+	}
 
 }

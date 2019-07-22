@@ -20,6 +20,9 @@ public class DoubleLinkedListDriver {
 		System.out.println("-----inserting before 2nd postion");
 		dlist.insertAtposBefore(5, 2);
 		dlist.viewList();
+		System.out.println("------deleting at first");
+		dlist.deleteAtFirst();
+		dlist.viewList();
 		
 
 	}
