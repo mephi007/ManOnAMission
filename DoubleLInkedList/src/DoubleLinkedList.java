@@ -69,6 +69,29 @@ public class DoubleLinkedList {
 			n.setNext(start);
 			start = n;
 		}
+	}
+	
+	//method to insert node at Last
+	public void insertAtLast(int data)
+	{
+		Node n,t;
+		n = new Node();
+		n.setData(data);
+		n.setNext(null);
+		if(isEmpty())
+		{
+			start = n;
+			n.setPrev(null);
+		}
+		else {
+			t = start;
+			while( t.getNext() != null)
+			{
+				t = t.getNext();
+			}
+			t.setNext(n);
+			n.setPrev(t);
+		}
 			
 	}
 
