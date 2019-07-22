@@ -17,6 +17,9 @@ public class DoubleLinkedListDriver {
 		System.out.println("-----inserting after 2nd postion");
 		dlist.insertAtposAfter(4, 2);
 		dlist.viewList();
+		System.out.println("-----inserting before 2nd postion");
+		dlist.insertAtposBefore(5, 2);
+		dlist.viewList();
 		
 
 	}

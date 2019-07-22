@@ -1,123 +1,125 @@
 public class DoubleLinkedList {
 	Node start;
-	
-	public DoubleLinkedList()
-	{
+
+	public DoubleLinkedList() {
 		this.start = null;
 	}
-	
-	//to check if the list if empty
+
+	// to check if the list if empty
 	public boolean isEmpty() {
-		if(start == null)
-		{
+		if (start == null) {
 			System.out.println("list is empty");
 			return true;
 		}
 		return false;
 	}
-	
-	//method to check the size of the list
-	public int Size()
-	{
+
+	// method to check the size of the list
+	public int Size() {
 		int count = 0;
-		if(start == null)
-			count =0;
+		if (start == null)
+			count = 0;
 		else {
 			count = 1;
 			Node t = start;
-			while(t.getNext() != null)
-			{
+			while (t.getNext() != null) {
 				t = t.getNext();
 				count++;
 			}
 		}
 		return count;
 	}
-	
-	//method to view the element of the list
-	public void viewList(){
-		if(isEmpty())
-		{
+
+	// method to view the element of the list
+	public void viewList() {
+		if (isEmpty()) {
 			System.out.println("list is empty");
-		}
-		else {
+		} else {
 			Node t = start;
-			for(int i=1; i<=Size(); i++)
-			{
+			for (int i = 1; i <= Size(); i++) {
 				System.out.println(t.getData());
 				t = t.getNext();
 			}
 		}
-	
+
 	}
-	
-	//method to insert node at first
-	public void insertAtFirst(int data)
-	{
+
+	// method to insert node at first
+	public void insertAtFirst(int data) {
 		Node n = new Node();
 		n.setData(data);
 		n.setNext(null);
 		n.setPrev(null);
-	   //case 1 when list is empty
-		if(start == null)
-		{
-			start =n;
+		// case 1 when list is empty
+		if (start == null) {
+			start = n;
 		}
-		//case 2 when list is not empty
+		// case 2 when list is not empty
 		else {
 			start.setPrev(n);
 			n.setNext(start);
 			start = n;
 		}
 	}
-	
-	//method to insert node at Last
-	public void insertAtLast(int data)
-	{
-		Node n,t;
+
+	// method to insert node at Last
+	public void insertAtLast(int data) {
+		Node n, t;
 		n = new Node();
 		n.setData(data);
 		n.setNext(null);
-		if(isEmpty())
-		{
+		if (isEmpty()) {
 			start = n;
 			n.setPrev(null);
-		}
-		else {
+		} else {
 			t = start;
-			while( t.getNext() != null)
-			{
+			while (t.getNext() != null) {
 				t = t.getNext();
 			}
 			t.setNext(n);
 			n.setPrev(t);
 		}
-			
+
 	}
-	
-	//method to insert node at after the given position
-	public void insertAtposAfter(int data, int pos)
-	{
-		if(Size() == 0)
-		{
+
+	// method to insert node at after the given position
+	public void insertAtposAfter(int data, int pos) {
+		if (Size() == 0) {
 			System.out.println("list is already empty, inserting at first");
 			insertAtFirst(data);
-		}
-		else if(pos > Size())
-		{
+		} else if (pos > Size()) {
 			System.out.println("given postion is greater than the size");
-		}
-		else if(pos == Size())
-		{
+		} else if (pos == Size()) {
 			insertAtLast(data);
-		}
-		else {
-			Node n,t;
+		} else {
+			Node n, t;
 			n = new Node();
 			n.setData(data);
 			t = start;
-			for(int i=1; i< pos; i++)
-			{
+			for (int i = 1; i < pos; i++) {
+				t = t.getNext();
+			}
+			n.setNext(t.getNext());
+			n.setPrev(t);
+			t.setNext(n);
+		}
+	}
+
+	// method to insert node at after the given position
+	public void insertAtposBefore(int data, int pos) {
+		if (Size() == 0) {
+			System.out.println("list is already empty, inserting at first");
+			insertAtFirst(data);
+		} else if (pos > Size()) {
+			System.out.println("given postion is greater than the size");
+		} else if (pos == Size()) {
+			insertAtLast(data);
+		} else {
+			Node n, t;
+			n = new Node();
+			n.setData(data);
+			t = start;
+			for (int i = 1; i < pos - 1; i++) {
 				t = t.getNext();
 			}
 			n.setNext(t.getNext());
