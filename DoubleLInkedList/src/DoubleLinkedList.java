@@ -232,4 +232,31 @@ public class DoubleLinkedList {
 			System.out.println("deleted list");
 		}
 	}
+	
+	//sum pair
+	public void sumPair(int sum)
+	{
+		Node first, second;
+		first = start;
+		second = start;
+		while( second.getNext() != null)
+			second = second.getNext();
+		
+		while(second != first)
+		{
+			int add = first.getData() + second.getData();
+			if(add == sum)
+			{
+				System.out.println("sum found at "+first.getData()+"  "+second.getData());
+				first = first.getNext();
+				second = second.getPrev();
+			}
+			else if(add < sum)
+			{
+				first = first.getNext();
+			}
+			else second = second.getPrev();
+				
+		}
+	}
 }

@@ -36,6 +36,18 @@ public class DoubleLinkedListDriver {
 		dlist.reverse();
 		dlist.viewList();
 		dlist.deleteList();
+		System.out.println("------------------------------------------");
+		dlist.insertAtFirst(9);
+		dlist.insertAtFirst(8);
+		dlist.insertAtFirst(6);
+		dlist.insertAtFirst(5);
+		dlist.insertAtFirst(4);
+		dlist.insertAtFirst(2);
+		dlist.insertAtFirst(1);
+		dlist.viewList();
+		dlist.sumPair(7);
+		
+		
 		
 
 	}
