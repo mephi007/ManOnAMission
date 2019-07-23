@@ -281,4 +281,41 @@ public class DoubleLinkedList {
 		t = t.getNext();
 		}
 	}
+	
+	//swap kth node from beginning and from the last
+	public void swapKthNode(int k)
+	{
+		if(Size() < k)
+		{
+			return;
+		}
+		if(2*k-1 == Size())
+			return;
+		Node x = start;
+		Node x_prev = null;
+		for(int i = 1; i<k; i++)
+		{
+			x_prev = x;
+			x = x.getNext();
+		}
+		Node y = start;
+		Node y_prev = null;
+		for(int i =1; i<Size()-k+1; i++)
+		{
+			y_prev = y;
+			y = y.getNext();
+		}
+		if(x_prev != null)
+			x_prev.setNext(y);
+		if(y_prev != null)
+			y_prev.setNext(x);
+		
+		Node temp = x.getNext();
+		x.setNext(y.getNext());
+		y.setNext(temp);
+		
+		if(k==1) start = y;
+		if(k == Size()) start = x;
+		
+	}
 }

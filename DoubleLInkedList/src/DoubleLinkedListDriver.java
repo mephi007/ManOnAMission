@@ -51,6 +51,10 @@ public class DoubleLinkedListDriver {
 		System.out.println("---------------inserting 7 -----------------");
 		dlist.insertSort(7);
 		dlist.viewList();
+		System.out.println("-----------------------------------");
+		System.out.println("-------------swapping first and last------------");
+		dlist.swapKthNode(1);
+		dlist.viewList();
 		
 		
 		
