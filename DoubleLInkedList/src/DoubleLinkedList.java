@@ -201,5 +201,23 @@ public class DoubleLinkedList {
 			beyond.setPrev(t);
 		}
 	}
+	
+	//method to reverse the list
+	public void reverse()
+	{
+		Node curr = start;
+		Node next;
+		next = null;
+		while( curr  != null)
+		{
+			next = curr.getNext();
+			curr.setNext(curr.getPrev());
+			curr.setPrev(next);
+			curr = curr.getNext();
+		}
+		if(next != null)
+			start = next.getPrev();
+
+	}
 
 }
