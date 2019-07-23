@@ -219,5 +219,17 @@ public class DoubleLinkedList {
 			start = next.getPrev();
 
 	}
-
+	
+	//delete list
+	public void deleteList()
+	{
+		if(start == null)
+		{
+			System.out.println("already empty");
+		}
+		else {
+			start = null;
+			System.out.println("deleted list");
+		}
+	}
 }

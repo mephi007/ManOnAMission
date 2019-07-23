@@ -35,6 +35,7 @@ public class DoubleLinkedListDriver {
 		System.out.println("------------reversing the list------------------");
 		dlist.reverse();
 		dlist.viewList();
+		dlist.deleteList();
 		
 
 	}
