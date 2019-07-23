@@ -46,6 +46,11 @@ public class DoubleLinkedListDriver {
 		dlist.insertAtFirst(1);
 		dlist.viewList();
 		dlist.sumPair(7);
+		System.out.println("---------------------------------------");
+		dlist.viewList();
+		System.out.println("---------------inserting 7 -----------------");
+		dlist.insertSort(7);
+		dlist.viewList();
 		
 		
 		

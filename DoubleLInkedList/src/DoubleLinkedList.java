@@ -259,4 +259,26 @@ public class DoubleLinkedList {
 				
 		}
 	}
+	
+	//insert in a sorted position in a sorted list
+	public void insertSort(int data)
+	{
+		Node t,n;
+		t = start;
+		n = new Node();
+		n.setData(data);
+		while(t.getNext() != null)
+		{
+		if(data > t.getData() && data < t.getNext().getData())
+		{
+			Node temp = t.getNext();
+			t.setNext(n);
+			n.setPrev(t);
+			n.setNext(temp);
+			temp.setPrev(n);
+			break;			
+		}
+		t = t.getNext();
+		}
+	}
 }
