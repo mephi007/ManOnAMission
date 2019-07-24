@@ -18,5 +18,23 @@ public class CircularList {
 			}
 		return flag;			
 	}
+	
+	//method to find the size of the list
+	public int Size()
+	{
+		int n =0;
+		if(start == null)
+			n = 0;
+		else {
+			n=1;
+			Node t = start;
+			do {
+				n++;
+				t = t.getNext();
+			}while(t != start);
+		}
+		
+		return n;
+	}
 
 }
