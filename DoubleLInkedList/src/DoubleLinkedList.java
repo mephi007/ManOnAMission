@@ -1,3 +1,5 @@
+import java.util.HashSet;
+
 public class DoubleLinkedList {
 	Node start;
 
@@ -373,5 +375,37 @@ public class DoubleLinkedList {
 			}
 			 t = t.getNext();
 		}
+	}
+	
+	//remove duplicate from an unsorted dll
+	public void removeDupUnSorted()
+	{
+		Node t = start;
+		HashSet<Integer> s = new HashSet<>();
+		while(t != null)
+		{
+			if(s.contains(t.getData()))
+			{
+				if(t.getPrev() == null)
+				{
+					start = t.getNext();
+					t.getNext().setPrev(null);
+				}
+				if(t.getNext() == null)
+				{
+					t.getPrev().setNext(null);
+				}
+				if(t.getPrev() != null && t.getNext() != null)
+				{
+					Node temp = t.getPrev();
+					t.getNext().setPrev(temp);
+					temp.setNext(t.getNext());
+				}
+			}
+			else s.add(t.getData());
+			
+			t = t.getNext();
+		}
+		
 	}
 }
