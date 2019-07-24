@@ -32,6 +32,7 @@ public class DoubleLinkedListDriver {
 		System.out.println("--------------------------------------");
 		dlist.insertAtFirst(1);
 		dlist.insertAtFirst(2);
+		dlist.viewList();
 		System.out.println("------------reversing the list------------------");
 		dlist.reverse();
 		dlist.viewList();

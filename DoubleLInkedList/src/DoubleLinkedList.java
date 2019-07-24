@@ -207,18 +207,16 @@ public class DoubleLinkedList {
 	//method to reverse the list
 	public void reverse()
 	{
-		Node curr = start;
-		Node next;
-		next = null;
-		while( curr  != null)
+		Node t = start, temp = null;
+		while(t != null)
 		{
-			next = curr.getNext();
-			curr.setNext(curr.getPrev());
-			curr.setPrev(next);
-			curr = curr.getNext();
+			temp = t.getPrev();
+			t.setPrev(t.getNext());
+			t.setNext(temp);
+			t = t.getPrev();
 		}
-		if(next != null)
-			start = next.getPrev();
+		if(temp != null)
+			start = temp.getPrev();
 
 	}
 	
