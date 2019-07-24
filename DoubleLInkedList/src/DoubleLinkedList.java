@@ -406,6 +406,26 @@ public class DoubleLinkedList {
 			
 			t = t.getNext();
 		}
-		
 	}
+	
+	//rotate dll by N nodes
+	public void rotateByN(int n)
+	{
+		Node t=start, temp = start;
+		for(int i=1; i<n; i++)
+		{
+			t = t.getNext();
+		}
+		start = t.getNext();
+		t.getNext().setPrev(null);
+		t.setNext(null);
+		t = start;
+		while(t.getNext() != null)
+		{
+			t = t.getNext();
+		}
+		t.setNext(temp);
+		temp.setPrev(t);
+	}
+	
 }

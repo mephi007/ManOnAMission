@@ -102,6 +102,9 @@ public class DoubleLinkedListDriver {
 		System.out.println("-----------removing duplicate from unsorted list------------------");
 		dlist.removeDupUnSorted();
 		dlist.viewList();
+		System.out.println("-----------rotate list------------");
+		dlist.rotateByN(2);
+		dlist.viewList();
 		
 		
 		
