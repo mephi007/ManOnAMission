@@ -7,6 +7,7 @@ public class Driver {
 		CircularList clist = new CircularList();
 		clist.isEmpty();
 		System.out.println("Size of the list "+clist.Size());
+		clist.viewList();
 		
 	}
 

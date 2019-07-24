@@ -36,5 +36,22 @@ public class CircularList {
 		
 		return n;
 	}
+	
+	//method to view the nodes of the list
+	public void viewList()
+	{
+		Node t = start;
+		if(start == null)
+		{
+			System.out.println(" list is empty ");
+		}
+		else
+		{
+			do {
+				System.out.println(t.getData());
+				t = t.getNext();
+			}while( t != start);
+		}
+	}
 
 }
