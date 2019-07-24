@@ -72,6 +72,21 @@ public class DoubleLinkedListDriver {
 		System.out.println("------removing delete---------------");
 		dlist.removeDuplicate();
 		dlist.viewList();
+		System.out.println("------------------------------------");
+		dlist.deleteList();
+		dlist.insertAtFirst(2);
+		dlist.insertAtLast(2);
+		dlist.insertAtLast(10);
+		dlist.insertAtLast(8);
+		dlist.insertAtLast(4);
+		dlist.insertAtLast(2);
+		dlist.insertAtLast(5);
+		dlist.insertAtLast(2);
+		dlist.viewList();
+		System.out.println("-----------removing x=2------------------");
+		dlist.deleteAllOccur(2);
+		dlist.viewList();
+		
 		
 		
 		

@@ -345,4 +345,33 @@ public class DoubleLinkedList {
 		if(del.getPrev() != null)
 			del.getPrev().setNext(del.getNext());
 	}
+	
+	//delete all Occurance of a given key
+	public void deleteAllOccur(int x)
+	{
+		Node t = start;
+		while(t != null)
+		{
+			if(t.getData() == x)
+			{
+				if(t.getPrev() == null)
+				{
+					start = t.getNext();
+					t.getNext().setPrev(null);
+				}
+				if(t.getNext() == null)
+				{	
+					t.getPrev().setNext(null);
+				}
+				if(t.getPrev() != null && t.getNext() != null)
+				{
+					Node temp = t.getPrev();
+					t.getNext().setPrev(temp);
+					temp.setNext(t.getNext());
+				}
+				
+			}
+			 t = t.getNext();
+		}
+	}
 }
