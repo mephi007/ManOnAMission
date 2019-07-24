@@ -26,7 +26,6 @@ public class CircularList {
 		if(start == null)
 			n = 0;
 		else {
-			n=1;
 			Node t = start;
 			do {
 				n++;
@@ -52,6 +51,22 @@ public class CircularList {
 				t = t.getNext();
 			}while( t != start);
 		}
+	}
+	
+	//method to insert node in the beginning
+	public void insertAtFirst(int data) {
+		Node n = new Node();
+		n.setData(data);
+		if(start == null)
+		{
+			start = n;
+			start.setNext(n);
+		}
+		else {
+			n.setNext(start.getNext());
+			start.setNext(n);
+		}
+		
 	}
 
 }

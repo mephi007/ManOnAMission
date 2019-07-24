@@ -8,6 +8,13 @@ public class Driver {
 		clist.isEmpty();
 		System.out.println("Size of the list "+clist.Size());
 		clist.viewList();
+		clist.insertAtFirst(1);
+		System.out.println("Size of the list "+clist.Size());
+		clist.viewList();
+		System.out.println("------------");
+		clist.insertAtFirst(2);
+		System.out.println("Size of the list "+clist.Size());
+		clist.viewList();
 		
 	}
 
