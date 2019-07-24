@@ -318,4 +318,31 @@ public class DoubleLinkedList {
 		if(k == Size()) start = x;
 		
 	}
+	
+	//remove duplicate from list
+	public void removeDuplicate()
+	{
+		Node t = start;
+		while(t.getNext() != null)
+		{
+			if(t.getData() == t.getNext().getData())
+			{
+				Node temp = t.getNext();
+				deleteNode(temp);
+				
+			}
+			else t = t.getNext();
+		}
+	}
+
+	private void deleteNode(Node del) {
+		if(start == null || del == null)
+			return;
+		if(start == del)
+			start = del.getNext();
+		if(del.getNext() != null)
+			del.getNext().setPrev(del.getPrev());
+		if(del.getPrev() != null)
+			del.getPrev().setNext(del.getNext());
+	}
 }

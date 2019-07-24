@@ -55,6 +55,23 @@ public class DoubleLinkedListDriver {
 		System.out.println("-------------swapping first and last------------");
 		dlist.swapKthNode(1);
 		dlist.viewList();
+		System.out.println("------------------------------------");
+		dlist.deleteList();
+		dlist.insertAtFirst(4);;
+		dlist.insertAtposAfter(4, 1);
+		dlist.insertAtposAfter(4, 2);
+		dlist.insertAtposAfter(4, 3);
+		dlist.insertAtposAfter(4, 4);
+		dlist.insertAtposAfter(6, 5);
+		dlist.insertAtposAfter(8, 6);
+		dlist.insertAtposAfter(8, 7);
+		dlist.insertAtposAfter(10, 8);
+		dlist.insertAtposAfter(12, 9);
+		dlist.insertAtposAfter(12, 10);
+		dlist.viewList();
+		System.out.println("------removing delete---------------");
+		dlist.removeDuplicate();
+		dlist.viewList();
 		
 		
 		
