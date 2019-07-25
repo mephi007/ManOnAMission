@@ -21,6 +21,9 @@ public class Driver {
 		clist.insertAtFirst(4);
 		System.out.println("Size of the list "+clist.Size());
 		clist.viewList();
+		clist.insertAtLast(5);
+		System.out.println("Size of the list "+clist.Size());
+		clist.viewList();
 		
 	}
 

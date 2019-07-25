@@ -73,7 +73,33 @@ public class CircularList {
 			start = n;
 			t.setNext(n);
 		}
-		
+	}
+	
+	//method to insert at ending
+	public void insertAtLast(int data)
+	{
+		Node n = new Node();
+		n.setData(data);
+		if(start == null)
+		{
+			start = n;
+			start.setNext(n);
+		}
+		else if(Size() == 1)
+		{
+			Node temp = start;
+			temp.setNext(n);
+			n.setNext(temp);
+		}
+		else {
+			Node t = start;
+			while(t.getNext() != start)
+			{
+				t =t.getNext();
+			}
+			t.setNext(n);
+			n.setNext(start);
+		}
 	}
 
 }
