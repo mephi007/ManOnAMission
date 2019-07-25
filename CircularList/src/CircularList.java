@@ -105,7 +105,7 @@ public class CircularList {
 	//method to insert at pos
 	public void insertAtPosAfter(int pos, int data)
 	{
-		if(start == null || pos == 1 || pos == Size())
+		if(start == null || pos == Size())
 			insertAtLast(data);
 		else {
 			Node n = new Node();
