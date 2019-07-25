@@ -161,5 +161,32 @@ public class CircularList {
 			prev.setNext(t.getNext());
 		}
 	}
+	
+	//delete at the given position
+	public void deleteAtPos(int pos)
+	{
+		if(start == null)
+			System.out.println("List is already empty");
+		else if(Size() == 1 && pos == 1)
+		{
+			start = null;
+		}
+		else if(pos > Size())
+			System.out.println("the given position is greater than last");
+		else if(pos == 1)
+			deleteAtBeg();
+		else if(pos == Size())
+			deleteAtLast();
+		else {
+			Node t = start;
+			Node prev = null;
+			for(int i=1; i<pos; i++)
+			{
+				prev = t;
+				t=t.getNext();
+			}
+			prev.setNext(t.getNext());
+		}
+	}
 
 }
