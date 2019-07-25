@@ -142,5 +142,24 @@ public class CircularList {
 			start = temp;
 		}
 	}
+	
+	//delete at the last
+	public void deleteAtLast()
+	{
+		if(start == null)
+			System.out.println("List is already empty");
+		else if(Size() == 1)
+			start = null;
+		else {
+			Node t = start;
+			Node prev = null;
+			while(t.getNext() != start)
+			{
+				prev = t;
+				t = t.getNext();
+			}
+			prev.setNext(t.getNext());
+		}
+	}
 
 }
