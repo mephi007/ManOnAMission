@@ -63,10 +63,15 @@ public class CircularList {
 			start.setNext(n);
 		}
 		else {
+			Node t = start;
+			while( t.getNext() != start)
+			{
+				t = t.getNext();
+			}
 			Node temp = start;
 			n.setNext(temp);
 			start = n;
-			temp.setNext(n);
+			t.setNext(n);
 		}
 		
 	}
