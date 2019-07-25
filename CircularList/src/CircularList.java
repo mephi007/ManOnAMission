@@ -101,5 +101,23 @@ public class CircularList {
 			n.setNext(start);
 		}
 	}
+	
+	//method to insert at pos
+	public void insertAtPosAfter(int pos, int data)
+	{
+		if(start == null || pos == 1 || pos == Size())
+			insertAtLast(data);
+		else {
+			Node n = new Node();
+			n.setData(data);
+			Node t = start;
+			for(int i=1; i<pos; i++)
+			{
+				t = t.getNext();
+			}
+			n.setNext(t.getNext());
+			t.setNext(n);
+		}
+	}
 
 }
