@@ -188,5 +188,14 @@ public class CircularList {
 			prev.setNext(t.getNext());
 		}
 	}
+	
+	//delete list
+	public void deleteList()
+	{
+		if(start == null)
+			System.out.println("List is already empty");
+		else 
+			start = null;
+	}
 
 }

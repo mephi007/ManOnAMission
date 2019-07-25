@@ -39,6 +39,9 @@ public class Driver {
 		clist.deleteAtPos(3);
 		System.out.println("Size of the list "+clist.Size());
 		clist.viewList();
+		clist.deleteList();;
+		System.out.println("Size of the list "+clist.Size());
+		clist.viewList();
 		
 	}
 
