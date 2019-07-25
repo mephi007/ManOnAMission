@@ -30,6 +30,9 @@ public class Driver {
 		clist.insertAtPosAfter(1,6);
 		System.out.println("Size of the list "+clist.Size());
 		clist.viewList();
+		clist.deleteAtBeg();
+		System.out.println("Size of the list "+clist.Size());
+		clist.viewList();
 		
 	}
 

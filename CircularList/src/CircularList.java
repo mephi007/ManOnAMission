@@ -107,6 +107,8 @@ public class CircularList {
 	{
 		if(start == null || pos == Size())
 			insertAtLast(data);
+		else if(pos > Size())
+			System.out.println("positin given is larger than the list");
 		else {
 			Node n = new Node();
 			n.setData(data);
@@ -117,6 +119,27 @@ public class CircularList {
 			}
 			n.setNext(t.getNext());
 			t.setNext(n);
+		}
+	}
+	
+	//delete at beginning
+	public void deleteAtBeg()
+	{
+		if(start == null)
+		{
+			System.out.println("List is already empty");
+		}
+		else if(Size() == 1)
+		{
+			start = null;
+		}
+		else {
+			Node temp = start.getNext();
+			Node t = start;
+			while(t.getNext() != start)
+				t = t.getNext();
+			t.setNext(temp);
+			start = temp;
 		}
 	}
 
