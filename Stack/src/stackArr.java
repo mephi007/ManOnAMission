@@ -9,7 +9,7 @@ public class stackArr {
 		// TODO Auto-generated constructor stub
 		this.size = s;
 		 arr = new int[this.size];
-		
+		 top = 0;
 	}
 
 }
