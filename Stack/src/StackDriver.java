@@ -7,6 +7,7 @@ public class StackDriver {
 		
 		stackArr stck = new stackArr(5);
 		stck.isEmpty();
+		stck.viewStack();
 		
 
 	}

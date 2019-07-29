@@ -23,5 +23,18 @@ public class stackArr {
 		
 		return flag;
 	}
+	
+	public void viewStack()
+	{
+		if(isEmpty());
+		else {
+			for(int i= top; i>=0; i--)
+			{
+				System.out.print(arr[i]);
+			}
+		}
+	}
+	
+	
 
 }
