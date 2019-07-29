@@ -19,4 +19,17 @@ public class queueArr {
 		}
 		return flag;
 	}
+	
+	//overflow
+	public boolean overflow() {
+		boolean flag = false;
+		if(rear == size -1)
+		{
+			System.out.println("Queue is full, OverFlow");
+			flag = true;
+		}
+		return flag;
+	}
+	
+	
 }

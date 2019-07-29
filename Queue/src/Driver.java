@@ -6,6 +6,10 @@ public class Driver {
 		
 		queueArr que = new queueArr(5);
 		que.isEmpty();
+		if(que.overflow());
+		else {
+			System.out.println("Queue have space left");
+		}
 
 	}
 
