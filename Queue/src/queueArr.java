@@ -53,5 +53,18 @@ public class queueArr {
 		}
 	}
 	
+	//pop element from the queue
+	public void dequeue()
+	{
+		if(isEmpty());
+		else {
+			for(int i=1; i<=rear; i++)
+			{
+				arr[i-1] = arr[i];
+			}
+			rear--;
+		}
+	}
+	
 	
 }
