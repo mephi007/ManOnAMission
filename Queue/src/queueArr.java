@@ -21,7 +21,7 @@ public class queueArr {
 	}
 	
 	//overflow
-	public boolean overflow() {
+	public boolean overFlow() {
 		boolean flag = false;
 		if(rear == size -1)
 		{
@@ -29,6 +29,28 @@ public class queueArr {
 			flag = true;
 		}
 		return flag;
+	}
+	
+	//Enqueue element 
+	public void push(int data)
+	{
+		if(overFlow()) {
+			System.out.println("Sorry, cannot push element into stack");
+		}
+		else {
+			rear = rear+1;
+			arr[rear] = data;
+		}
+	}
+	
+	// to view all the element of the stack
+	public void viewQueue() {
+		if (isEmpty());
+		else {
+			for (int i = rear; i > 0; i--) {
+				System.out.println(arr[i]);
+			}
+		}
 	}
 	
 	
