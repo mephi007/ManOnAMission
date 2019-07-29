@@ -11,5 +11,17 @@ public class stackArr {
 		 arr = new int[this.size];
 		 top = 0;
 	}
+	
+	public boolean isEmpty()
+	{
+		boolean flag = false;
+		if(top <= 0)
+		{
+			System.out.println("Stack is empty");
+			flag = true;
+		}
+		
+		return flag;
+	}
 
 }
