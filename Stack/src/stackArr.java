@@ -61,6 +61,14 @@ public class stackArr {
 		}
 	}
 	
+	public void pop()
+	{
+		if(isEmpty());
+		else {
+			top--;
+		}
+	}
+	
 	
 	
 	

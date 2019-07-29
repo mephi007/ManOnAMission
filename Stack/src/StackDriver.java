@@ -22,7 +22,20 @@ public class StackDriver {
 		stck.viewStack();
 		System.out.println("-----------pushing 5 into stack---------");
 		stck.push(5);
-		//stck.viewStack();
+		stck.viewStack();
+		System.out.println("------------poping element out of stack--------");
+		stck.pop();
+		stck.viewStack();
+		System.out.println("------------poping element out of stack--------");
+		stck.pop();
+		stck.viewStack();
+		System.out.println("------------poping element out of stack--------");
+		stck.pop();
+		stck.viewStack();
+		System.out.println("------------poping element out of stack--------");
+		stck.pop();
+		stck.viewStack();
+
 		
 	}
 
