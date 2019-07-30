@@ -7,7 +7,9 @@ public class stackLLDriver {
 		stackLL s = new stackLL();
 		s.isEmpty();
 		s.push(1);
-		System.out.println(s.peek());
+		s.peek();
+		s.pop();
+		s.peek();
 
 	}
 

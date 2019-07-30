@@ -24,11 +24,19 @@ public class stackLL {
 		n.setNext(top);
 		top = n;
 	}
+
+	// peek
+	public void peek() {
+		if(isEmpty());
+		else
+		System.out.println(top.getData());
+	}
 	
-	//peek
-	public int peek()
+	//pop
+	public void pop()
 	{
-		return top.getData();
+		if(isEmpty());
+		else top = top.getNext();
 	}
 
 }
