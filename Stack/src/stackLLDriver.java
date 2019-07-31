@@ -10,6 +10,7 @@ public class stackLLDriver {
 		s.peek();
 		s.pop();
 		s.peek();
+		
 
 	}
 
