@@ -62,6 +62,7 @@ public class stackDL {
 		}
 		else {
 			top = top.getNext();
+			top.setPrev(null);
 		}
 		size--;
 	}
