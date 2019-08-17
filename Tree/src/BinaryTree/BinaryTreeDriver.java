@@ -23,6 +23,13 @@ public class BinaryTreeDriver {
 		bt.PostOrder(bt.root);
 		System.out.println("-----------Level Order Traversing---------------");
 		bt.LevelOrder();
+		System.out.println("--------------------------------------");
+		Operation bt1 = new Operation();
+		bt1.insert(5);
+		bt1.insert(8);
+		bt1.insert(9);
+		bt1.LevelOrder();
+		
 
 	}
 

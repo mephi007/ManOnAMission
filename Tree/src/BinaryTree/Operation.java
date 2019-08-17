@@ -35,43 +35,65 @@ public class Operation {
 		}
 	}
 
-	//Pre-Order Traversing(Root, Left, Right)
+	// Pre-Order Traversing(Root, Left, Right)
 	public void PreOrder(Node n) {
-		if(n !=null) {
+		if (n != null) {
 			System.out.println(n.getData());
 			PreOrder(n.getLeft());
 			PreOrder(n.getRight());
 		}
 	}
-	
-	//Post-Order Traversing(Left, Right, Root)
+
+	// Post-Order Traversing(Left, Right, Root)
 	public void PostOrder(Node n) {
-		if(n != null) {
+		if (n != null) {
 			PostOrder(n.getLeft());
 			PostOrder(n.getRight());
 			System.out.println(n.getData());
 		}
 	}
-	
-	//Breadth-First Traversal
-	public void LevelOrder()
-	{
-		if(root == null)
+
+	// Breadth-First Traversal
+	public void LevelOrder() {
+		if (root == null)
 			return;
-		
+
 		Queue<Node> q = new LinkedList<Node>();
 		q.add(root);
-		while(!q.isEmpty()) {
+		while (!q.isEmpty()) {
 			Node n = q.remove();
 			System.out.println(n.getData());
-			if(n.getLeft() != null) {
+			if (n.getLeft() != null) {
 				q.add(n.getLeft());
-			if(n.getRight() != null) {
-				q.add(n.getRight());
-			}
+				if (n.getRight() != null) {
+					q.add(n.getRight());
+				}
 			}
 		}
 	}
-	
+
+	// LevelOrder Traversal Insertion
+	public void insert(int value) {
+		if (root == null) {
+			root = new Node(value);
+		} else {
+			Queue<Node> que = new LinkedList<Node>();
+			que.add(root);
+
+			while (!que.isEmpty()) {
+				Node temp = que.remove();
+				if (temp.getLeft() == null) {
+					temp.setLeft(new Node(value));
+					break;
+				} else
+					que.add(temp.getLeft());
+				if (temp.getRight() == null) {
+					temp.setRight(new Node(value));
+					break;
+				} else
+					que.add(temp.getRight());
+			}
+		}
+	}
 
 }
