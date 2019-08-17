@@ -19,6 +19,8 @@ public class BinaryTreeDriver {
 		bt.InOrder(bt.root);
 		System.out.println("-----------Pre Order Traversing---------------");
 		bt.PreOrder(bt.root);
+		System.out.println("-----------Post Order Traversing---------------");
+		bt.PostOrder(bt.root);
 
 	}
 

@@ -23,7 +23,7 @@ public class Operation {
 
 	// Depth-First Traversing
 
-	// In-Order Traversing
+	// In-Order Traversing(Left, Root, Right)
 	public void InOrder(Node n) {
 		if (n != null) {
 			InOrder(n.getLeft());
@@ -32,12 +32,21 @@ public class Operation {
 		}
 	}
 
-	//Pre-Order Traversing
+	//Pre-Order Traversing(Root, Left, Right)
 	public void PreOrder(Node n) {
 		if(n !=null) {
 			System.out.println(n.getData());
 			PreOrder(n.getLeft());
 			PreOrder(n.getRight());
+		}
+	}
+	
+	//Post-Order Traversing(Left, Right, Root)
+	public void PostOrder(Node n) {
+		if(n != null) {
+			PostOrder(n.getLeft());
+			PostOrder(n.getRight());
+			System.out.println(n.getData());
 		}
 	}
 	
