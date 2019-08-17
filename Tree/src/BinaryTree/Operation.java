@@ -1,5 +1,8 @@
 package BinaryTree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Operation {
 	Node root;
 
@@ -47,6 +50,26 @@ public class Operation {
 			PostOrder(n.getLeft());
 			PostOrder(n.getRight());
 			System.out.println(n.getData());
+		}
+	}
+	
+	//Breadth-First Traversal
+	public void LevelOrder()
+	{
+		if(root == null)
+			return;
+		
+		Queue<Node> q = new LinkedList<Node>();
+		q.add(root);
+		while(!q.isEmpty()) {
+			Node n = q.remove();
+			System.out.println(n.getData());
+			if(n.getLeft() != null) {
+				q.add(n.getLeft());
+			if(n.getRight() != null) {
+				q.add(n.getRight());
+			}
+			}
 		}
 	}
 	
