@@ -20,5 +20,19 @@ public class Operation {
 	public void add(int value) {
 		root = addRec(root, value);
 	}
+	
+	//Depth-First Traversing
+	
+	//In-Order Traversing
+	public void InOrder(Node n)
+	{
+		if(n != null)
+		{
+			InOrder(n.getLeft());
+			System.out.println(n.getData());
+			InOrder(n.getRight());
+		}
+	}
+	
 
 }
