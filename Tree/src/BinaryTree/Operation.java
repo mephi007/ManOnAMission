@@ -95,18 +95,45 @@ public class Operation {
 			}
 		}
 	}
-
-	public Node rightMost() {
+	
+	//find the rightMost Node
+	public Node rightMost(Node r) {
 		Queue<Node> que = new LinkedList<Node>();
-		que.add(root);
+		que.add(r);
 		while (!que.isEmpty()) {
 			Node temp = que.remove();
-			if (temp.getRight() == null) {
+			if (temp.getRight().getRight() == null) {
+//				temp.setRight(null);
 				return temp;
 			} else
 				que.add(temp.getRight());
 		}
 		return null;
+	}
+	
+	//delete node
+	public void deleteNode(int val) {
+		Queue<Node> que = new LinkedList<Node>();
+		Node temp = null;
+		Node left = null;
+		Node right = null;
+		if(root == null)
+			return;
+		
+		if(root.getData() == val) {
+			temp = rightMost(this.root);
+			left = root.getLeft();
+			right = root.getRight();
+			temp.getRight().setLeft(left);
+			temp.getRight().setRight(right);
+			this.root = temp.getRight();
+			temp.setRight(null);
+			
+		}
+		
+		
+		
+		
 	}
 
 }
