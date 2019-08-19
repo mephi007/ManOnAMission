@@ -96,4 +96,17 @@ public class Operation {
 		}
 	}
 
+	public Node rightMost() {
+		Queue<Node> que = new LinkedList<Node>();
+		que.add(root);
+		while (!que.isEmpty()) {
+			Node temp = que.remove();
+			if (temp.getRight() == null) {
+				return temp;
+			} else
+				que.add(temp.getRight());
+		}
+		return null;
+	}
+
 }
