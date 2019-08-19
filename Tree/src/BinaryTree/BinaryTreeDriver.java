@@ -29,6 +29,11 @@ public class BinaryTreeDriver {
 		bt1.insert(8);
 		bt1.insert(9);
 		bt1.LevelOrder();
+		System.out.println("---------right most node-----------");
+		System.out.println(bt.rightMost(bt.root).getData());
+		System.out.println("----------delete root-----------");
+		bt.deleteNode(8);
+		bt.LevelOrder();
 		
 
 	}

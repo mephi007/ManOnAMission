@@ -95,8 +95,8 @@ public class Operation {
 			}
 		}
 	}
-	
-	//find the rightMost Node
+
+	// find the rightMost Node
 	public Node rightMost(Node r) {
 		Queue<Node> que = new LinkedList<Node>();
 		que.add(r);
@@ -110,30 +110,58 @@ public class Operation {
 		}
 		return null;
 	}
-	
-	//delete node
+
+	// delete node
 	public void deleteNode(int val) {
 		Queue<Node> que = new LinkedList<Node>();
 		Node temp = null;
 		Node left = null;
 		Node right = null;
-		if(root == null)
+		Node replacingNode = rightMost(this.root);
+
+		if (root == null)
 			return;
-		
-		if(root.getData() == val) {
-			temp = rightMost(this.root);
+
+		if (root.getData() == val) {
 			left = root.getLeft();
 			right = root.getRight();
-			temp.getRight().setLeft(left);
-			temp.getRight().setRight(right);
-			this.root = temp.getRight();
-			temp.setRight(null);
-			
+			replacingNode.getRight().setLeft(left);
+			replacingNode.getRight().setRight(right);
+			this.root = replacingNode.getRight();
+			replacingNode.setRight(null);
 		}
+		else que.add(root);
 		
-		
-		
-		
-	}
+		while(!que.isEmpty())
+		{
+			temp = que.remove();
+			if(temp.getLeft() != null) {
+				if(temp.getLeft().getData() == val) {
+					left = temp.getLeft().getLeft();
+					right = temp.getLeft().getRight();
+					replacingNode.getRight().setLeft(left);
+					replacingNode.getRight().setRight(right);
+					temp.setLeft(replacingNode.getRight());
+					replacingNode.setRight(null);
+					break;
+				}
+			}else que.add(temp.getLeft());
+			if(temp.getRight() != null) {
+				if(temp.getRight().getData() == val) {
+					left = temp.getRight().getLeft();
+					if(temp.getRight().getRight().getData() != replacingNode.getRight().getData()) {
+						right = temp.getRight().getRight();
+					}
+					replacingNode.getRight().setLeft(left);
+					replacingNode.getRight().setRight(right);
+					temp.setRight(replacingNode.getRight());
+					replacingNode.setRight(null);
+					break;
+				}
+			}else que.add(temp.getRight());
+			}
+		}
+
+	
 
 }
