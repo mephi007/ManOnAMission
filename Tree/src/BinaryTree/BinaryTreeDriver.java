@@ -32,10 +32,16 @@ public class BinaryTreeDriver {
 		System.out.println("---------right most node-----------");
 		System.out.println(bt.rightMost(bt.root).getData());
 		System.out.println("----------delete root-----------");
-		bt.deleteNode(8);
+		bt.deleteNode(5);
 		bt.LevelOrder();
-		
-
+		System.out.println("---------Printing leaf of the Tree------------");
+		bt.printLeaf(bt.root);
+		System.out.println("---------------");
+		bt1.printLeaf(bt1.root);
+		System.out.println("-----printing leaf--------");
+		bt.printKDist(bt.root, 1);
+		System.out.println("-------continous tree or not----------");
+		bt.contTree();
 	}
 
 }

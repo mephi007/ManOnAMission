@@ -65,12 +65,13 @@ public class Operation {
 			System.out.println(n.getData());
 			if (n.getLeft() != null) {
 				q.add(n.getLeft());
+			}
 				if (n.getRight() != null) {
 					q.add(n.getRight());
 				}
 			}
 		}
-	}
+	
 
 	// LevelOrder Traversal Insertion
 	public void insert(int value) {
@@ -159,8 +160,73 @@ public class Operation {
 					break;
 				}
 			}else que.add(temp.getRight());
-			}
+			
+			delLeaf(temp, val);
+			
 		}
+	}
+	
+	private Node delLeaf(Node cur, int value) {
+		if(cur == null)
+			return null;
+		
+		cur.setLeft(delLeaf(cur.getLeft(), value));
+		cur.setRight(delLeaf(cur.getRight(), value));
+		
+		if(cur.getLeft() == null && cur.getRight() == null && cur.getData() == value)
+			return null;
+		
+		return cur;
+	}
+	
+	public void printLeaf(Node cur) {
+		if(cur == null)
+			return;
+		
+		printLeaf(cur.getLeft());
+		printLeaf(cur.getRight());
+		
+		if(cur.getLeft() == null && cur.getRight() == null)
+			System.out.println(cur.getData());
+		
+	}
+	
+	public void printKDist(Node n, int k) {
+		if(n == null) {
+			return;
+		}
+		if(k == 0) {
+			System.out.println(n.getData());
+			return;
+		}
+		else {
+			printKDist(n.getLeft(), k-1);
+			printKDist(n.getRight(), k-1);
+		}
+	}
+	
+	public void contTree() {
+		if(contTree(root) == 1) {
+			System.out.println("NO");
+		}
+		else System.out.println("YES");
+	}
+	
+	private int contTree(Node cur) {
+		if(cur == null) {
+			return cur.getData();
+		}
+		
+		if(Math.abs(cur.getData() - contTree(cur.getLeft())) != 1) {
+			return 0;
+		}
+		
+		if(Math.abs(cur.getData() - contTree(cur.getRight())) != 1) {
+			return 0;
+		}
+		
+		return 1;
+	}
 
 	
 
