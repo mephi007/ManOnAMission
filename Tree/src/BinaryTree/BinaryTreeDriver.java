@@ -40,8 +40,12 @@ public class BinaryTreeDriver {
 		bt1.printLeaf(bt1.root);
 		System.out.println("-----printing leaf--------");
 		bt.printKDist(bt.root, 1);
-		System.out.println("-------continous tree or not----------");
-		bt.contTree();
+//		System.out.println("-------continous tree or not----------");
+//		bt.contTree();
+		System.out.println("----------Iterative InOrder------------");
+		bt.IterativeInOrder();
+		System.out.println("----------Iterative PreOrder------------");
+		bt.IterativePreOrder();
 	}
 
 }

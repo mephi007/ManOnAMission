@@ -2,6 +2,7 @@ package BinaryTree;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class Operation {
 	Node root;
@@ -226,6 +227,40 @@ public class Operation {
 		}
 		
 		return 1;
+	}
+	
+	public void IterativeInOrder() {
+		Node p = root;
+		Stack<Node> st = new Stack<Node>();
+		while(true) {
+			while(p!=null) {
+				st.push(p);
+				p = p.getLeft();
+			}
+			if(st.isEmpty())
+				break;
+			
+			p = st.pop();
+			System.out.println(p.getData());
+			p = p.getRight();
+		}
+	}
+	
+	public void IterativePreOrder() {
+		Node p = root;
+		Stack<Node> st = new Stack<Node>();
+		while(true) {
+			while(p != null) {
+				System.out.println(p.getData());
+				st.push(p);
+				p = p.getLeft();
+			}
+			if(st.isEmpty())
+				break;
+			
+			p = st.pop();
+			p = p.getRight();
+		}
 	}
 
 	
