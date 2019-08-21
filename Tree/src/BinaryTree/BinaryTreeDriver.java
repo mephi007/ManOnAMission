@@ -46,6 +46,8 @@ public class BinaryTreeDriver {
 		bt.IterativeInOrder();
 		System.out.println("----------Iterative PreOrder------------");
 		bt.IterativePreOrder();
+		System.out.println("----------Iterative PostOrder------------");
+		bt.IterativePostOrder();
 	}
 
 }

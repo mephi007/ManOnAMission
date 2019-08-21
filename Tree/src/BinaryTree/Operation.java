@@ -67,12 +67,11 @@ public class Operation {
 			if (n.getLeft() != null) {
 				q.add(n.getLeft());
 			}
-				if (n.getRight() != null) {
-					q.add(n.getRight());
-				}
+			if (n.getRight() != null) {
+				q.add(n.getRight());
 			}
 		}
-	
+	}
 
 	// LevelOrder Traversal Insertion
 	public void insert(int value) {
@@ -131,14 +130,13 @@ public class Operation {
 			replacingNode.getRight().setRight(right);
 			this.root = replacingNode.getRight();
 			replacingNode.setRight(null);
-		}
-		else que.add(root);
-		
-		while(!que.isEmpty())
-		{
+		} else
+			que.add(root);
+
+		while (!que.isEmpty()) {
 			temp = que.remove();
-			if(temp.getLeft() != null) {
-				if(temp.getLeft().getData() == val) {
+			if (temp.getLeft() != null) {
+				if (temp.getLeft().getData() == val) {
 					left = temp.getLeft().getLeft();
 					right = temp.getLeft().getRight();
 					replacingNode.getRight().setLeft(left);
@@ -147,11 +145,12 @@ public class Operation {
 					replacingNode.setRight(null);
 					break;
 				}
-			}else que.add(temp.getLeft());
-			if(temp.getRight() != null) {
-				if(temp.getRight().getData() == val) {
+			} else
+				que.add(temp.getLeft());
+			if (temp.getRight() != null) {
+				if (temp.getRight().getData() == val) {
 					left = temp.getRight().getLeft();
-					if(temp.getRight().getRight().getData() != replacingNode.getRight().getData()) {
+					if (temp.getRight().getRight().getData() != replacingNode.getRight().getData()) {
 						right = temp.getRight().getRight();
 					}
 					replacingNode.getRight().setLeft(left);
@@ -160,109 +159,137 @@ public class Operation {
 					replacingNode.setRight(null);
 					break;
 				}
-			}else que.add(temp.getRight());
-			
+			} else
+				que.add(temp.getRight());
+
 			delLeaf(temp, val);
-			
+
 		}
 	}
-	
+
 	private Node delLeaf(Node cur, int value) {
-		if(cur == null)
+		if (cur == null)
 			return null;
-		
+
 		cur.setLeft(delLeaf(cur.getLeft(), value));
 		cur.setRight(delLeaf(cur.getRight(), value));
-		
-		if(cur.getLeft() == null && cur.getRight() == null && cur.getData() == value)
+
+		if (cur.getLeft() == null && cur.getRight() == null && cur.getData() == value)
 			return null;
-		
+
 		return cur;
 	}
-	
+
 	public void printLeaf(Node cur) {
-		if(cur == null)
+		if (cur == null)
 			return;
-		
+
 		printLeaf(cur.getLeft());
 		printLeaf(cur.getRight());
-		
-		if(cur.getLeft() == null && cur.getRight() == null)
+
+		if (cur.getLeft() == null && cur.getRight() == null)
 			System.out.println(cur.getData());
-		
+
 	}
-	
+
 	public void printKDist(Node n, int k) {
-		if(n == null) {
+		if (n == null) {
 			return;
 		}
-		if(k == 0) {
+		if (k == 0) {
 			System.out.println(n.getData());
 			return;
-		}
-		else {
-			printKDist(n.getLeft(), k-1);
-			printKDist(n.getRight(), k-1);
+		} else {
+			printKDist(n.getLeft(), k - 1);
+			printKDist(n.getRight(), k - 1);
 		}
 	}
-	
+
 	public void contTree() {
-		if(contTree(root) == 1) {
+		if (contTree(root) == 1) {
 			System.out.println("NO");
-		}
-		else System.out.println("YES");
+		} else
+			System.out.println("YES");
 	}
-	
+
 	private int contTree(Node cur) {
-		if(cur == null) {
+		if (cur == null) {
 			return cur.getData();
 		}
-		
-		if(Math.abs(cur.getData() - contTree(cur.getLeft())) != 1) {
+
+		if (Math.abs(cur.getData() - contTree(cur.getLeft())) != 1) {
 			return 0;
 		}
-		
-		if(Math.abs(cur.getData() - contTree(cur.getRight())) != 1) {
+
+		if (Math.abs(cur.getData() - contTree(cur.getRight())) != 1) {
 			return 0;
 		}
-		
+
 		return 1;
 	}
-	
+
 	public void IterativeInOrder() {
 		Node p = root;
 		Stack<Node> st = new Stack<Node>();
-		while(true) {
-			while(p!=null) {
+		while (true) {
+			while (p != null) {
 				st.push(p);
 				p = p.getLeft();
 			}
-			if(st.isEmpty())
+			if (st.isEmpty())
 				break;
-			
+
 			p = st.pop();
 			System.out.println(p.getData());
 			p = p.getRight();
 		}
 	}
-	
+
 	public void IterativePreOrder() {
 		Node p = root;
 		Stack<Node> st = new Stack<Node>();
-		while(true) {
-			while(p != null) {
+		while (true) {
+			while (p != null) {
 				System.out.println(p.getData());
 				st.push(p);
 				p = p.getLeft();
 			}
-			if(st.isEmpty())
+			if (st.isEmpty())
 				break;
-			
+
 			p = st.pop();
 			p = p.getRight();
 		}
 	}
 
-	
+	public void IterativePostOrder() {
+		Node p = root;
+		Stack<Node> st = new Stack<Node>();
+		while (true) {
+			if (p != null) {
+				st.push(p);
+				p = p.getLeft();
+			} else {
+				if (st.isEmpty()) {
+					break;
+				} else {
+					if (st.peek().getRight() == null) {
+						p = st.pop();
+						System.out.println(p.getData());
+						while (p == st.peek().getRight()) {
+							System.out.println(st.peek().getData());
+							p = st.pop();
+							if(st.isEmpty())
+								break;
+						}
+					}
+					if (!st.isEmpty())
+						p = st.peek().getRight();
+					else
+						p = null;
+				}
+			}
+		}
+	}
 
 }
