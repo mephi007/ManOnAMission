@@ -205,29 +205,6 @@ public class Operation {
 		}
 	}
 
-	public void contTree() {
-		if (contTree(root) == 1) {
-			System.out.println("NO");
-		} else
-			System.out.println("YES");
-	}
-
-	private int contTree(Node cur) {
-		if (cur == null) {
-			return cur.getData();
-		}
-
-		if (Math.abs(cur.getData() - contTree(cur.getLeft())) != 1) {
-			return 0;
-		}
-
-		if (Math.abs(cur.getData() - contTree(cur.getRight())) != 1) {
-			return 0;
-		}
-
-		return 1;
-	}
-
 	public void IterativeInOrder() {
 		Node p = root;
 		Stack<Node> st = new Stack<Node>();
@@ -290,6 +267,70 @@ public class Operation {
 				}
 			}
 		}
+	}
+	
+	public boolean contTree(Node cur) {
+		if(cur == null) {
+			return true;
+		}
+		
+		if(cur.getLeft() == null && cur.getRight() == null) {
+			return true;
+		}
+		
+		if(cur.getLeft() == null) {
+			return (Math.abs(cur.getData() - cur.getRight().getData()) == 1 && contTree(cur.getRight()));
+		}
+		
+		if(cur.getRight() == null) {
+			return (Math.abs(cur.getData() - cur.getLeft().getData()) == 1 && contTree(cur.getLeft()));
+		}
+		
+		return (Math.abs(cur.getData() - cur.getRight().getData()) == 1 && contTree(cur.getRight())) && 
+				(Math.abs(cur.getData() - cur.getLeft().getData()) == 1 && contTree(cur.getLeft()));
+	
+	}
+	
+	public Node mirror(Node n) {
+		if(n == null) {
+			return n;
+		}
+		
+		Node left = mirror(n.getLeft());
+		Node right = mirror(n.getRight());
+		
+		n.setLeft(right);
+		n.setRight(left);
+		
+		return n;
+	}
+	
+	private boolean isStructSame(Node a, Node b) {
+		if( a == null && b == null) {
+			return true;
+		}
+		
+		if( a != null && b != null && isStructSame(a.getLeft(), b.getLeft()) && isStructSame(a.getRight(), b.getRight())) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	public boolean isFoldable(Node n)
+	{
+		boolean res;
+		
+		if(n == null)
+			return true;
+		
+		mirror(n.getLeft());
+		
+		res = isStructSame(n.getLeft(), n.getRight());
+		
+		mirror(n.getRight());
+		
+		return res;
 	}
 
 }
