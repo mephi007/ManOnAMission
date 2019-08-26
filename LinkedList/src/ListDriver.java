@@ -160,6 +160,19 @@ public class ListDriver {
 			list.viewList();
 			
 			
+			System.out.println("----kth max sum-----");
+			List objList = new List();
+			
+			objList.insertAtPos(1, 1);
+			objList.insertAtPos(2, 2);
+			objList.insertAtPos(3, 3);
+			objList.insertAtPos(4, 4);
+			objList.insertAtPos(5, 5);
+			objList.insertAtPos(6, 6);
+			objList.viewList(objList);
+			System.out.println("Maximum sum  " +objList.kthMaxSum(4));
+			
+			
 
 	}
 

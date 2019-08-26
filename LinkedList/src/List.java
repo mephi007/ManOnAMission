@@ -556,5 +556,24 @@ public class List {
 		
 	}
 	
+	//Maximum sum of K consecutive nodes in the given Linked List
+	public int kthMaxSum(int k) {
+		int max_sum = 0;
+		Node t = start;
+		for(int i=1; i<=k; i++) {
+			max_sum = max_sum + t.getData();
+			t = t.getNext();
+		}
+		int windSum = max_sum;
+		Node subt = start;
+		while(t != null) {
+			windSum = windSum - subt.getData()+t.getData();
+			subt = subt.getNext();
+			t = t.getNext();
+			max_sum = Math.max(max_sum, windSum);
+		}
+		return max_sum;
+	}
+	
 	
 }
