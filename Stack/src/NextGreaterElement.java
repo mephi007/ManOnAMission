@@ -4,7 +4,7 @@ public class NextGreaterElement {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] a = {13,7,6,12};
+		int[] a = {4,5,2,25};
 		Stack<Integer> st = new Stack<>();
 		for(int i=0; i<a.length; i++)
 		{
