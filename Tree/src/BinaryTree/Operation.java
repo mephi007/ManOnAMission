@@ -340,7 +340,7 @@ public class Operation {
 		q.add(root);
 		q.add(null);
 		while(!q.isEmpty()) {
-			Node temp = q.peek();
+			Node temp = q.poll();
 			if(temp != null) {
 				System.out.println(temp.getData());
 				while(temp != null) {
@@ -350,12 +350,10 @@ public class Operation {
 					if(temp.getRight() != null) {
 						q.add(temp.getRight());
 					}
-					q.remove();
-					temp = q.peek();
+					temp = q.poll();
 				}
 				q.add(null);
 			}
-			q.remove();
 		}
 	}
 
