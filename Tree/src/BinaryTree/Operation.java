@@ -380,7 +380,7 @@ public class Operation {
 			for(int i=0; i< size; i++) {
 				temp = q.poll();
 				if(rightToLeft == false) {
-					System.out.println(temp.getData());
+					System.out.print(temp.getData()+" ");
 				}
 				else {
 					s.push(temp);
@@ -393,15 +393,43 @@ public class Operation {
 			if(rightToLeft == true) {
 				while(!s.isEmpty()) {
 					temp = s.pop();
-					System.out.println(temp.getData());
+					System.out.print(temp.getData()+" ");
 				}
 			}
 			if(ct == 2) {
 				rightToLeft = !rightToLeft;
 				ct = 0;
 			}
+			System.out.println();
 		}
-		System.out.println();
+		
 	}
+	
+	//Reverse Level Order
+	public void RevLevelOrder() {
+		Queue<Node> q = new LinkedList<Node>();
+		Stack<Node> s = new Stack<Node>();
+		Node temp = null;
+		q.add(root);
+		s.push(root);
+		while(!q.isEmpty()) {
+			temp = q.poll();
+			if(temp.getLeft() != null) {
+				q.add(temp.getLeft());
+				s.push(temp.getLeft());
+			}
+			if(temp.getRight() != null) {
+				q.add(temp.getRight());
+				s.push(temp.getRight());
+			}
+		}
+		
+		while(!s.isEmpty()) {
+			temp = s.pop();
+			System.out.println(temp.getData());
+		}
+	}
+	
+	
 
 }

@@ -100,6 +100,8 @@ public class BinaryTreeDriver {
 		bt5.LevelOrder();
 		System.out.println("Level order traversal with direction change after every two levels");
 		bt5.modifiedLevelOrder(bt5.root);
+		System.out.println("Reversal Level Order traversal");
+		bt5.RevLevelOrder();
 	}
 
 }
