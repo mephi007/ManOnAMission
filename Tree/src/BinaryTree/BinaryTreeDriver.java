@@ -71,6 +71,8 @@ public class BinaryTreeDriver {
 		bt3.insert(5);
 		System.out.println("-----------tree before mirror----------");
 		bt3.InOrder(bt3.root);
+		System.out.println("---------leftView-----------");
+		bt3.leftView();
 		bt3.mirror(bt3.root);
 		System.out.println("-----------tree after mirror----------");
 		bt3.InOrder(bt3.root);
@@ -84,6 +86,8 @@ public class BinaryTreeDriver {
 		System.out.println("------------------------");
 		bt3.InOrder(bt4.root);
 		System.out.println("is it foldable::::" + bt4.isFoldable(bt4.root));
+		System.out.println("---------leftView-----------");
+		bt3.leftView();
 	}
 
 }

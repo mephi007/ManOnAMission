@@ -332,5 +332,31 @@ public class Operation {
 		
 		return res;
 	}
+	
+	//leftView
+	
+	public void leftView() {
+		Queue<Node> q = new LinkedList<Node>();
+		q.add(root);
+		q.add(null);
+		while(!q.isEmpty()) {
+			Node temp = q.peek();
+			if(temp != null) {
+				System.out.println(temp.getData());
+				while(temp != null) {
+					if(temp.getLeft() != null) {
+						q.add(temp.getLeft());
+					}
+					if(temp.getRight() != null) {
+						q.add(temp.getRight());
+					}
+					q.remove();
+					temp = q.peek();
+				}
+				q.add(null);
+			}
+			q.remove();
+		}
+	}
 
 }
