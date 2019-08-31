@@ -88,6 +88,18 @@ public class BinaryTreeDriver {
 		System.out.println("is it foldable::::" + bt4.isFoldable(bt4.root));
 		System.out.println("---------leftView-----------");
 		bt3.leftView();
+		System.out.println("------------new tree-------------");
+		Operation bt5 = new Operation();
+		bt5.insert(1);
+		bt5.insert(2);
+		bt5.insert(3);
+		bt5.insert(7);
+		bt5.insert(6);
+		bt5.insert(5);
+		bt5.insert(4);
+		bt5.LevelOrder();
+		System.out.println("Level order traversal with direction change after every two levels");
+		bt5.modifiedLevelOrder(bt5.root);
 	}
 
 }

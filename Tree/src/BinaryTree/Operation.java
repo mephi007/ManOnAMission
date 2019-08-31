@@ -356,5 +356,52 @@ public class Operation {
 			}
 		}
 	}
+	
+	//Level order traversal with direction change after every two levels
+	public void modifiedLevelOrder(Node n) {
+		if(n == null) {
+			return;
+		}
+		if(n.getLeft() == null && n.getRight() == null) {
+			System.out.println(n.getData());
+			return;
+		}
+		
+		Queue<Node> q = new LinkedList<Node>();
+		Stack<Node> s = new Stack<Node>();
+		int size;
+		int ct =0;
+		Node temp = null;
+		boolean rightToLeft = false;
+		q.add(n);
+		while(!q.isEmpty()) {
+			ct++;
+			size = q.size();
+			for(int i=0; i< size; i++) {
+				temp = q.poll();
+				if(rightToLeft == false) {
+					System.out.println(temp.getData());
+				}
+				else {
+					s.push(temp);
+				}
+				if(temp.getLeft() != null)
+					q.add(temp.getLeft());
+				if(temp.getRight() != null)
+					q.add(temp.getRight());
+			}
+			if(rightToLeft == true) {
+				while(!s.isEmpty()) {
+					temp = s.pop();
+					System.out.println(temp.getData());
+				}
+			}
+			if(ct == 2) {
+				rightToLeft = !rightToLeft;
+				ct = 0;
+			}
+		}
+		System.out.println();
+	}
 
 }
