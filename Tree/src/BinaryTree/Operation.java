@@ -1,6 +1,8 @@
 package BinaryTree;
 
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -423,13 +425,47 @@ public class Operation {
 				s.push(temp.getRight());
 			}
 		}
-		
 		while(!s.isEmpty()) {
 			temp = s.pop();
 			System.out.println(temp.getData());
 		}
 	}
 	
+	public void reversePath(Node n, int data) {
+		Map<Integer, Integer> temp = new HashMap<>();
+		int pos =0;
+		int level =0;
+		reverseTreePath(n, data, temp, level, pos);
+	}
+	
+	private Node reverseTreePath(Node n, int data, Map<Integer, Integer> temp, int level, int pos) {
+		if(n == null)
+			return null;
+		
+		if(data == n.getData()) {
+			temp.put(level, n.getData());
+			n.setData(temp.get(pos));
+			pos++;
+			return n;
+		}
+		
+		temp.put(level, n.getData());
+		Node left, right = null;
+		
+		left = reverseTreePath(n.getLeft(), data, temp, level+1, pos);
+		
+		if(left == null)
+			right = reverseTreePath(n.getRight(), data, temp, level+1, pos);
+		
+		if(left != null || right != null) {
+			n.setData(temp.get(pos));
+			pos++;
+			return(left != null ? left: right);
+		}
+		
+		return null;
+		
+	}
 	
 
 }

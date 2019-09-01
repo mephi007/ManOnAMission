@@ -102,6 +102,11 @@ public class BinaryTreeDriver {
 		bt5.modifiedLevelOrder(bt5.root);
 		System.out.println("Reversal Level Order traversal");
 		bt5.RevLevelOrder();
+		System.out.println("---inOrder------");
+		bt5.InOrder(bt5.root);
+		System.out.println("---reverse tree path---");
+		bt5.reversePath(bt5.root, 7);
+		bt5.InOrder(bt5.root);
 	}
 
 }
