@@ -107,6 +107,18 @@ public class BinaryTreeDriver {
 		System.out.println("---reverse tree path---");
 		bt5.reversePath(bt5.root, 7);
 		bt5.InOrder(bt5.root);
+		Operation bt6 = new Operation();
+		bt6.insert(1);
+		bt6.insert(2);
+		bt6.insert(3);
+		bt6.insert(7);
+		bt6.insert(6);
+		bt6.insert(5);
+		bt6.insert(4);
+		System.out.println("new tree---------");
+		bt6.LevelOrder();
+		System.out.println("-----Specific Level order Traversal-----");
+		bt6.specificLevelOrder(bt6.root);
 	}
 
 }

@@ -467,5 +467,36 @@ public class Operation {
 		
 	}
 	
+	//Specific Level Order traversal
+	public void specificLevelOrder(Node n) {
+		if(n == null)
+			return;
+		System.out.print(n.getData()+" ");
+		if(n.getLeft() != null)
+			System.out.print(n.getLeft().getData()+" "+n.getRight().getData()+" ");
+		
+		if(n.getLeft().getLeft() == null)
+			return;
+		
+		Queue<Node> q =new LinkedList<Node>();
+		q.add(n.getLeft());
+		q.add(n.getRight());
+		Node first, sec = null;
+		while(!q.isEmpty()) {
+			first = q.poll();
+			sec = q.poll();
+			
+			System.out.print(first.getLeft().getData()+" "+sec.getRight().getData()+" ");
+			System.out.print(first.getRight().getData()+" "+sec.getLeft().getData()+" ");
+			
+			if(first.getLeft().getLeft() != null) {
+				q.add(first.getLeft());
+				q.add(sec.getRight());
+				q.add(first.getRight());
+				q.add(sec.getLeft());
+			}
+		}
+	}
+	
 
 }
