@@ -498,5 +498,25 @@ public class Operation {
 		}
 	}
 	
+	//lowest common ancestor
+	public Node lca(Node root, int n1, int n2) {
+		if(root == null)
+			return null;
+		
+		if(root.getData() == n1 || root.getData() ==n2)
+			return root;
+		
+		Node left = lca(root.getLeft(), n1, n2);
+		Node right = lca(root.getRight(), n1, n2);
+		
+		if(left != null && right != null)
+			return root;
+		
+		if(left == null && right == null)
+			return null;
+		
+		return left != null ? left : right;
+	}
+	
 
 }

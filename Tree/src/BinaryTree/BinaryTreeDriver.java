@@ -119,6 +119,20 @@ public class BinaryTreeDriver {
 		bt6.LevelOrder();
 		System.out.println("-----Specific Level order Traversal-----");
 		bt6.specificLevelOrder(bt6.root);
+		System.out.println("-------Lowest Common Ancestor---------");
+		Operation low = new Operation();
+		low.insert(1);
+		low.insert(2);
+		low.insert(3);
+		low.insert(4);
+		low.insert(5);
+		low.insert(6);
+		low.insert(7);
+		low.PostOrder(low.root);
+		Node lcaRes = low.lca(low.root, 4, 5);
+		System.out.println("----lca----");
+		System.out.println(lcaRes.getData());
+		
 	}
 
 }
