@@ -532,6 +532,19 @@ public class Operation {
 		
 	}
 	
+	//print Ancestors of a given node in a binary tree
+	public boolean printAncestor(Node node, int target) {
+		if(node == null)
+			return false;
+		if(node.getData() == target)
+			return true;
+		if(printAncestor(node.getLeft(), target) || printAncestor(node.getRight(), target)) {
+			System.out.println(node.getData());
+			return true;
+		}
+		return false;
+	}
+	
 	
 	
 	

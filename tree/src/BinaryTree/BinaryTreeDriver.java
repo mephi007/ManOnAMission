@@ -144,6 +144,8 @@ public class BinaryTreeDriver {
 		fi.insert(45);
 		fi.InOrder(fi.root);
 		System.out.println("distance between root and 45 is:: "+ fi.findDist(fi.root, 45));
+		System.out.println("print all ancestor of node 45:: ");
+		fi.printAncestor(fi.root, 45);
 		
 
 }
