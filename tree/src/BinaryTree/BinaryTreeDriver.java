@@ -147,6 +147,12 @@ public class BinaryTreeDriver {
 		System.out.println("print all ancestor of node 45:: ");
 		fi.printAncestor(fi.root, 45);
 		
+		System.out.println("distance between 45 and 25 is :: "+ fi.findDistNodes(fi.root, 45, 25));
+		System.out.println("distance between 45 and 15 is :: "+ fi.findDistNodes(fi.root, 45, 15));
+		
+		System.out.println("Common nodes between 2 and 25:: ");
+		if(fi.findCommon( fi.root, 20, 25)==false)
+			System.out.println("no common nodes");
 
 }
 }

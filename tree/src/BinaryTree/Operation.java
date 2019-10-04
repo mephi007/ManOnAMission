@@ -536,8 +536,10 @@ public class Operation {
 	public boolean printAncestor(Node node, int target) {
 		if(node == null)
 			return false;
-		if(node.getData() == target)
+		if(node.getData() == target) {
+			System.out.println(node.getData());
 			return true;
+		}
 		if(printAncestor(node.getLeft(), target) || printAncestor(node.getRight(), target)) {
 			System.out.println(node.getData());
 			return true;
@@ -545,7 +547,25 @@ public class Operation {
 		return false;
 	}
 	
+	//find distance between two nodes
+	public int findDistNodes(Node root, int n1, int n2)
+	{
+		int x = findDist(root, n1);
+		int y = findDist(root, n2);
+		int lca = lca(root, n1, n2).getData();
+		int lcadist = findDist(root, lca);
+		return (x+y)-2*lcadist;
+	}
 	
+	//print all the nodes that are common for 2 given nodes
+	public boolean findCommon(Node root, int n1, int n2) {
+		Node lca = lca(root, n1, n2);
+		if(lca == null)
+			return false;
+		
+		printAncestor(root, lca.getData());
+		return true;
+	}
 	
 	
 
