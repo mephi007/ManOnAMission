@@ -132,6 +132,19 @@ public class BinaryTreeDriver {
 		Node lcaRes = low.lca(low.root, 4, 5);
 		System.out.println();
 		System.out.println(lcaRes.getData());
+		System.out.println("---------------------------");
+		Operation fi = new Operation();
+		fi.insert(5);
+		fi.insert(10);
+		fi.insert(15);
+		fi.insert(20);
+		fi.insert(25);
+		fi.insert(30);
+		fi.insert(35);
+		fi.insert(45);
+		fi.InOrder(fi.root);
+		System.out.println("distance between root and 45 is:: "+ fi.findDist(fi.root, 45));
+		
 
 }
 }

@@ -519,6 +519,19 @@ public class Operation {
 	}
 	
 	//finding Distance between root and given node
+	public int findDist(Node root, int n1) {
+		if(root == null)
+			return -1;
+		
+		int x =-1;
+		
+		if( root.getData() == n1 || (x = findDist(root.getLeft(), n1)) >= 0 ||(x = findDist(root.getRight(), n1)) >= 0) {
+			return x+1;
+		}
+		return x;
+		
+	}
+	
 	
 	
 	
