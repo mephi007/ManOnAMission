@@ -2,6 +2,7 @@ package DynamicProgramming;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 public class ConsecutiveArray {
@@ -31,11 +32,28 @@ public class ConsecutiveArray {
 		 return Math.max(longest, count);
 	
 }
+	
+	public static int larSeqHash(int[] arr) {
+		int max =0;
+		HashSet<Integer> values = new HashSet<>();
+		for(int i : arr) {
+			values.add(i);
+		}
+		for(int i: values) {
+			if(values.contains(i-1)) continue;
+			int length =0;
+			while(values.contains(i++)) length++;
+			max = Math.max(max, length);
+		}
+		return max;
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		int[] arr = {4,2,1,6,5};
 		System.out.println(larSeq(arr));
+		System.out.println("---Optimised using HashSet------");
+		System.out.println(larSeqHash(arr));
 	
 
 	}
