@@ -47,7 +47,10 @@ public class SolutionMergeSortedList {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		ListNode l1 = new ListNode(0);
+		ListNode l2 = new ListNode(0);
+		
+	
 	}
 
 }
