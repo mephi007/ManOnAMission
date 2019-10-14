@@ -16,6 +16,20 @@ public class SolutionRemoveElement {
 			}
 		}
 		System.out.println(i);
+		
+		int[] arr = {0,1,2,2,3,0,4,2};
+		System.out.println("--------better approach-----");
+		int k = 0;
+		int value = 2;
+		int n = arr.length;
+		while(k<n) {
+			if(arr[i] == value) {
+				arr[i] = arr[n-1];
+				n--;
+			}
+			else { k++; }
+		}
+		System.out.println(n);
 	}
 
 }
