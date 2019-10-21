@@ -65,18 +65,47 @@ import java.util.Queue;
 	        }
 	        return res;
 	    }
+		
+		public List<Double> AvgLevelOrder() {
+        List<Double> res = new ArrayList<Double>();
+        if(root == null) return res;
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root);
+        while(!q.isEmpty()){
+        	List<Integer> array = new ArrayList<>();
+            int size = q.size();
+            for(int i=0; i<size; i++) {
+            	TreeNode temp = q.poll();
+            	if(temp.left != null) q.add(temp.left);
+            	if(temp.right != null) q.add(temp.right);
+            	array.add(temp.val);
+            }
+
+            long sum = 0;
+            for(int i : array) {
+            	sum += i;
+            }
+            double avg = (double) sum/array.size();
+            res.add(avg);
+        }
+        return res;
+    }
 	}
 	public class SolutionLevelOrderTraversal {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Tree obj = new Tree();
-		obj.insert(3);
-		obj.insert(9);
-		obj.insert(20);
-		obj.insert(15);
-		obj.insert(7);
+		//[2147483647,2147483647,2147483647]
+
+		obj.insert(2147483647);
+		obj.insert(2147483647);
+		obj.insert(2147483647);
+//		obj.insert(15);
+//		obj.insert(7);
 		obj.LevelOrder();
 		System.out.println(obj.levelOrder());
+		System.out.println("---------------");
+		System.out.println(obj.AvgLevelOrder());
 	}
 
 }
