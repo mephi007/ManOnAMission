@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Stack;
 
 
 	class TreeNode {
@@ -90,6 +91,74 @@ import java.util.Queue;
         }
         return res;
     }
+		
+		public List<List<Integer>> bottomUpTraversal() {
+			Stack<TreeNode> st = new Stack<>();
+	        Queue<TreeNode> q = new LinkedList<>();
+	        
+	        q.add(root);
+	        q.add(null);
+	        
+	        while(!q.isEmpty()){
+	            TreeNode temp = q.poll();
+	            
+	            if(temp == null){
+	                if(!q.isEmpty()){
+	                    q.add(null);
+	                    st.push(null);
+	                }
+	            }else{
+	                st.push(temp);
+	                if(temp.right != null)
+	                    q.add(temp.right);
+	                if(temp.left != null)
+	                    q.add(temp.left);
+	            }
+	        }
+	        
+	        List<Integer> sublist = new ArrayList<>();
+	        List<List<Integer>> res = new ArrayList<>();
+	        int i =0;
+	        while(!st.empty()){
+	            TreeNode temp = st.pop();
+	            if(temp == null){
+	                res.add(sublist);
+	                sublist.remove(i++);
+	            }
+	            else{
+	                sublist.add(temp.val);
+	            }
+	        }
+	        
+	        return res;
+		}
+		
+		class Res{
+	        public int val;
+	        Res(){
+	            val = Integer.MIN_VALUE;
+	        }
+	    }
+	    public int maxPathSum(TreeNode root) {
+	        if(root == null) return 0;
+	        Res res = new Res();
+	        helper(root, res);
+	        return res.val;
+	    }
+	    
+	    private int helper(TreeNode root, Res res){
+	        if(root == null) return 0;
+	        
+	        int l = helper(root.left, res);
+	        int r = helper(root.right, res);
+	        
+	        int curr = Math.max(Math.max(l,r)+root.val, root.val);
+	        int max = Math.max(curr, l+r+root.val);
+	        
+	        res.val = Math.max(res.val, max);
+	        
+	        return curr;
+	    }
 	}
 	public class SolutionLevelOrderTraversal {
 	public static void main(String[] args) {
@@ -97,15 +166,19 @@ import java.util.Queue;
 		Tree obj = new Tree();
 		//[2147483647,2147483647,2147483647]
 
-		obj.insert(2147483647);
-		obj.insert(2147483647);
-		obj.insert(2147483647);
-//		obj.insert(15);
-//		obj.insert(7);
+		obj.insert(3);
+		obj.insert(9);
+		obj.insert(20);
+		obj.insert(15);
+		obj.insert(7);
 		obj.LevelOrder();
 		System.out.println(obj.levelOrder());
-		System.out.println("---------------");
 		System.out.println(obj.AvgLevelOrder());
+		System.out.println("---------------");
+		System.out.println(obj.bottomUpTraversal());
+		System.out.println("---------------------------");
+		System.out.println(obj.maxPathSum(obj.root));
 	}
+	
 
 }
