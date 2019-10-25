@@ -6,7 +6,7 @@ public class PascalTriangle {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int n = 5;
+		int n = 15;
 		System.out.println(pascalTrianle(n));
 
 	}
@@ -26,7 +26,8 @@ public class PascalTriangle {
 				if(j==0 || i==0 || i==j)
 					arr.add(1);
 				else {
-					int value = fact(i)/ (fact(j)*fact(i-j));
+//					int value = fact(i)/ (fact(j)*fact(i-j));
+					int value = res.get(i-1).get(j-1) + res.get(i-1).get(j); 
 					arr.add(value);
 				}
 			}
@@ -35,11 +36,11 @@ public class PascalTriangle {
 		
 	}
 
-	private static int fact(int i) {
-		// TODO Auto-generated method stub
-		if(i == 0)
-			return 1;
-		return i*fact(i-1);
-	}
+//	private static int fact(int i) {
+//		// TODO Auto-generated method stub
+//		if(i == 0)
+//			return 1;
+//		return i*fact(i-1);
+//	}
 
 }
