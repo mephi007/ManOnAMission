@@ -6,8 +6,17 @@ public class PascalTriangle {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int n = 15;
+		int n = 3;
 		System.out.println(pascalTrianle(n));
+		System.out.println("----------------");
+		System.out.println(getRow(n));
+		}
+
+	private static List<Integer> getRow(int n) {
+		// TODO Auto-generated method stub
+		List<List<Integer>> res= new ArrayList<>();
+		helper(res,n);
+		return res.get(res.size()-1);
 
 	}
 
@@ -20,7 +29,7 @@ public class PascalTriangle {
 
 	private static void helper(List<List<Integer>> res, int n) {
 		// TODO Auto-generated method stub
-		for(int i=0; i<n; i++) {
+		for(int i=0; i<=n; i++) {
 			List<Integer> arr = new ArrayList<>();
 			for(int j =0; j<=i; j++) {
 				if(j==0 || i==0 || i==j)
