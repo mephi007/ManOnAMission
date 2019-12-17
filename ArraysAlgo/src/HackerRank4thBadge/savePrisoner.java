@@ -6,12 +6,11 @@ public class savePrisoner {
 		// TODO Auto-generated method stub
 		int n = 7;
 		int m = 19, s = 2;
-		int j = s;
-        for(int i=1; i<=m; i++){
-            j++;
-            if(j>n) j = 1;
-        }
-        System.out.println(j);
+		int warnPrisoner = (s+m-1)%n;
+		
+		if(warnPrisoner == 0) warnPrisoner = n;
+		
+		System.out.println(warnPrisoner);
 	}
 
 }
